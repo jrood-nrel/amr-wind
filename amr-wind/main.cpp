@@ -3,8 +3,16 @@
 
 #include "AMReX_FileSystem.H"
 
+#ifdef AMREX_USE_HIP
+#include <hip/hip_runtime.h>
+#endif
+
 int main(int argc, char* argv[])
 {
+#ifdef AMREX_USE_HIP
+    hipInit(0);
+#endif
+
 #ifdef AMREX_USE_MPI
     MPI_Init(&argc, &argv);
 #endif
