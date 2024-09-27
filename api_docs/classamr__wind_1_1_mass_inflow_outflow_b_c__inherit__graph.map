@@ -1,0 +1,4 @@
+<map id="amr_wind::MassInflowOutflowBC" name="amr_wind::MassInflowOutflowBC">
+<area shape="rect" id="node1" title="Custom Neumann fills for the inflow&#45;outflow BC." alt="" coords="5,80,240,107"/>
+<area shape="rect" id="node2" href="$classamr__wind_1_1_field_b_c_iface.html" title="Interface to setup up boundary conditions on a field." alt="" coords="35,5,210,32"/>
+</map>
