@@ -161,7 +161,7 @@ void KOmegaSSTIDDES<Transport>::update_turbulent_viscosity(
                          gradOmega_arrs[nbx](i, j, k, 2));
 
                 amrex::Real cdkomega = amrex::max<amrex::Real>(
-                    1.0e-10_rt,
+                    std::numeric_limits<amrex::Real>::epsilon() * 1.0e2_rt,
                     2.0_rt * rho_arrs[nbx](i, j, k) * sigma_omega2 * gko /
                         (sdr_arrs[nbx](i, j, k) +
                          std::numeric_limits<amrex::Real>::epsilon()));
@@ -236,14 +236,17 @@ void KOmegaSSTIDDES<Transport>::update_turbulent_viscosity(
                 const amrex::Real rans_ind = fdtilde * (1.0_rt + fe);
                 rans_ind_arrs[nbx](i, j, k) = rans_ind;
                 const amrex::Real l_iddes = amrex::max<amrex::Real>(
-                    1.0e-16_rt, rans_ind * l_rans + (1.0_rt - fdtilde) * l_les);
+                    std::numeric_limits<amrex::Real>::epsilon(),
+                    rans_ind * l_rans + (1.0_rt - fdtilde) * l_les);
 
                 const amrex::Real sqrt_tke_amb = std::sqrt(tke_amb);
                 const amrex::Real l_sst_amb =
                     sqrt_tke_amb /
-                    (beta_star * amrex::max<amrex::Real>(1.0e-16_rt, sdr_amb));
+                    (beta_star *
+                     amrex::max<amrex::Real>(
+                         std::numeric_limits<amrex::Real>::epsilon(), sdr_amb));
                 const amrex::Real l_iddes_amb = amrex::max<amrex::Real>(
-                    1.0e-16_rt,
+                    std::numeric_limits<amrex::Real>::epsilon(),
                     rans_ind * l_sst_amb + (1.0_rt - fdtilde) * l_les);
                 const amrex::Real diss_amb = rho_arrs[nbx](i, j, k) * tke_amb *
                                              sqrt_tke_amb / l_iddes_amb;
