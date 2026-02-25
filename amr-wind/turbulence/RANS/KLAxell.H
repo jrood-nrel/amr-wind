@@ -1,9 +1,19 @@
 #ifndef KLAXELL_H
 #define KLAXELL_H
 
+#include <AMReX_Vector.H>
 #include <string>
+
 #include "amr-wind/turbulence/TurbModelBase.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/turbulence/TurbulenceModel.H"
+
+enum struct DiffusionType : std::uint8_t;
+namespace amr_wind {
+class CFDSim;
+class Field;
+enum class FieldState : std::uint8_t;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

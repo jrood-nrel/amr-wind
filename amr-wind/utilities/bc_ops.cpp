@@ -1,5 +1,8 @@
 #include "amr-wind/utilities/bc_ops.H"
 
+#include <AMReX_BCRec.H>
+#include <AMReX_BC_TYPES.H>
+
 std::pair<bool, bool>
 amr_wind::utils::has_extdir(amrex::BCRec const* bcrec, int ncomp, int dir)
 {

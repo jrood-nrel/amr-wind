@@ -1,3 +1,21 @@
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_iMultiFab.H>
+#include <string>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/ocean_waves/boundary_ops/OceanWavesBoundary.H"
 #include "amr-wind/ocean_waves/boundary_ops/OceanWavesFillInflow.H"
@@ -7,6 +25,12 @@
 #include "amr-wind/wind_energy/ABL.H"
 #include "amr-wind/physics/multiphase/MultiPhase.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/incflo_enums.H"
+#include "amr-wind/wind_energy/ABLBoundaryPlane.H"
+#include "amr-wind/wind_energy/ABLModulatedPowerLaw.H"
 
 using namespace amrex::literals;
 

@@ -1,4 +1,10 @@
+#include <AMReX.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_RealBox.H>
 #include <memory>
+#include <string>
+#include <string_view>
 
 #include "MeshTest.H"
 #include "pp_utils.H"

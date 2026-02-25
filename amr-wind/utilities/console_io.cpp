@@ -1,10 +1,35 @@
+#include <__ostream/basic_ostream.h>
+#include <_time.h>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MLMG.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_MultiFabUtil.H>
+#include <AMReX_Print.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <AMReX_iMultiFab.H>
 #include <chrono>
-#include <ctime>
+#include <iomanip>
+#include <utility>
+
 #include "amr-wind/utilities/console_io.H"
 #include "amr-wind/AMRWindVersion.H"
 #include "AMReX.H"
-#include "AMReX_OpenMP.H"
 #include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/ScratchField.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/equation_systems/PDEFields.H"
 
 #ifdef AMR_WIND_USE_NETCDF
 #include "netcdf.h"

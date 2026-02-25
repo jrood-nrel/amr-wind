@@ -1,12 +1,24 @@
 #ifndef TEMPERATURE_H
 #define TEMPERATURE_H
 
+#include <AMReX_MLABecLaplacian.H>
+#include <string>
+
 #include "amr-wind/equation_systems/PDETraits.H"
 #include "amr-wind/equation_systems/SchemeTraits.H"
 #include "amr-wind/equation_systems/PDEHelpers.H"
 #include "amr-wind/equation_systems/PDE.H"
 #include "amr-wind/equation_systems/temperature/TemperatureSource.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/equation_systems/PDEFields.H"
+#include "amr-wind/turbulence/TurbulenceModel.H"
+
+namespace amr_wind {
+namespace pde {
+template <typename PDE>
+struct TurbulenceOp;
+} // namespace pde
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

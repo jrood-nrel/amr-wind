@@ -1,4 +1,8 @@
-#include <cmath>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_ParmParse.H>
+#include <memory>
+#include <string>
 
 #include "amr-wind/incflo.H"
 #include "amr-wind/core/Physics.H"
@@ -6,9 +10,16 @@
 #include "amr-wind/equation_systems/PDEBase.H"
 #include "amr-wind/turbulence/TurbulenceModel.H"
 #include "amr-wind/utilities/console_io.H"
-#include "amr-wind/utilities/PostProcessing.H"
-#include "AMReX_MultiFabUtil.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/ScratchField.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/equation_systems/PDEFields.H"
+#include "amr-wind/helics.H"
+#include "amr-wind/incflo_enums.H"
 
 using namespace amrex::literals;
 

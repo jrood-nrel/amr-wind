@@ -1,6 +1,18 @@
 #ifndef INDEX_OPERATIONS_H
 #define INDEX_OPERATIONS_H
+#include <math.h>
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Extension.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_Math.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_SPACE.H>
 #include <algorithm>
+#include <iterator>
 
 #include "AMReX_REAL.H"
 #include "AMReX_Vector.H"
@@ -8,6 +20,11 @@
 #include "AMReX_RealBox.H"
 #include "AMReX_RealVect.H"
 #include "AMReX_Geometry.H"
+
+namespace amrex {
+class Geometry;
+class RealBox;
+} // namespace amrex
 
 using namespace amrex::literals;
 

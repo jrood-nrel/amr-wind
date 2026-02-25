@@ -1,14 +1,33 @@
 #include "amr-wind/physics/TerrainDrag.H"
+
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_INT.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Vector.H>
+#include <fstream>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/CFDSim.H"
 #include "AMReX_iMultiFab.H"
-#include "AMReX_MultiFabUtil.H"
 #include "AMReX_ParmParse.H"
-#include "AMReX_ParReduce.H"
-#include "amr-wind/utilities/trig_ops.H"
 #include "amr-wind/utilities/IOManager.H"
 #include "amr-wind/utilities/io_utils.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
 
 using namespace amrex::literals;
 

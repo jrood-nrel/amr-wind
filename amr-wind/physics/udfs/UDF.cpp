@@ -1,6 +1,17 @@
 #include "amr-wind/physics/udfs/UDF.H"
+
+#include <AMReX.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <string_view>
+
 #include "amr-wind/core/Field.H"
-#include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/physics/udfs/LinearProfile.H"
 #include "amr-wind/physics/udfs/PowerLawProfile.H"
 #include "amr-wind/physics/udfs/BurggrafLid.H"
@@ -8,7 +19,6 @@
 #include "amr-wind/physics/udfs/CustomVelocity.H"
 #include "amr-wind/physics/udfs/CustomScalar.H"
 #include "amr-wind/physics/udfs/TwoLayer.H"
-
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
 

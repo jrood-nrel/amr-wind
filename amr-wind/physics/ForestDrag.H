@@ -1,6 +1,16 @@
 #ifndef FORESTDRAG_H
 #define FORESTDRAG_H
 
+#include <AMReX_Array.H>
+#include <AMReX_Box.H>
+#include <AMReX_Extension.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_Vector.H>
+#include <cmath>
+#include <string>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/Field.H"
 #include "amr-wind/CFDSim.H"
@@ -8,6 +18,11 @@
 #include "amr-wind/utilities/integrals.H"
 #include "amr-wind/utilities/constants.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

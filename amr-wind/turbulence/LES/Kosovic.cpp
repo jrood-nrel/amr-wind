@@ -1,4 +1,15 @@
+#include <AMReX_Algorithm.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
 #include <cmath>
+#include <numbers>
+#include <string_view>
+
 #include "amr-wind/turbulence/LES/Kosovic.H"
 #include "amr-wind/turbulence/TurbModelDefs.H"
 #include "amr-wind/fvm/nonLinearSum.H"
@@ -7,7 +18,15 @@
 #include "AMReX_REAL.H"
 #include "AMReX_MultiFab.H"
 #include "AMReX_ParmParse.H"
-#include "amr-wind/wind_energy/ABL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/wind_energy/MOData.H"
+
+enum struct DiffusionType : std::uint8_t;
+namespace amr_wind {
+enum class FieldState : std::uint8_t;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

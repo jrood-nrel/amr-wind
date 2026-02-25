@@ -1,12 +1,28 @@
 #ifndef ACUTATOR_UTILS_H
 #define ACUTATOR_UTILS_H
 
+#include <stdlib.h>
+#include <AMReX_Algorithm.H>
+#include <AMReX_Extension.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Vector.H>
 #include <set>
 #include <cmath>
+#include <numbers>
+
 #include "amr-wind/core/vs/vector_space.H"
 #include "amr-wind/utilities/index_operations.H"
 #include "AMReX_AmrCore.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/core/vs/vstraits.H"
+
+namespace amrex {
+class AmrCore;
+class RealBox;
+} // namespace amrex
 
 using namespace amrex::literals;
 

@@ -1,7 +1,17 @@
 #include "amr-wind/wind_energy/actuator/aero/AirfoilTable.H"
-#include "amr-wind/utilities/linear_interpolation.H"
+
+#include <AMReX.H>
+#include <AMReX_REAL.H>
+#include <AMReX_String.H>
 #include <fstream>
 #include <algorithm>
+#include <cmath>
+
+#include "amr-wind/utilities/linear_interpolation.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/utilities/trig_ops.H"
+#include "amr-wind/wind_energy/actuator/aero/AirfoilTableI.H"
 
 namespace amr_wind::actuator {
 

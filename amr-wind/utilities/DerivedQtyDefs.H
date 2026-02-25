@@ -1,7 +1,16 @@
 #ifndef DERIVEDQTYDEFS_H
 #define DERIVEDQTYDEFS_H
 
+#include <AMReX_Vector.H>
+#include <string>
+#include <vector>
+
 #include "amr-wind/utilities/DerivedQuantity.H"
+#include "amr-wind/core/Field.H"
+
+namespace amr_wind {
+class FieldRepo;
+} // namespace amr_wind
 
 namespace amr_wind::derived {
 struct VorticityMag : public DerivedQty::Register<VorticityMag>

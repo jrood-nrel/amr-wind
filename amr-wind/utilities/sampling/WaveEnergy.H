@@ -1,9 +1,17 @@
 #ifndef WAVEENERGY_H
 #define WAVEENERGY_H
 
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/PostProcessing.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

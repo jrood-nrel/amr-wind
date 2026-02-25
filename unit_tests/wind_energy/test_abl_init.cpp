@@ -1,8 +1,22 @@
+#include <gtest/gtest.h>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <limits>
+#include <string>
+#include <string_view>
+
 #include "abl_test_utils.H"
 #include "aw_test_utils/iter_tools.H"
 #include "aw_test_utils/test_utils.H"
 #include "amr-wind/wind_energy/ABLFieldInit.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "aw_test_utils/AmrTestMesh.H"
 
 using namespace amrex::literals;
 

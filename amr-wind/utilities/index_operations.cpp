@@ -1,5 +1,11 @@
 #include "amr-wind/utilities/index_operations.H"
 
+#include <AMReX_Box.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_REAL.H>
+#include <AMReX_RealBox.H>
+#include <cmath>
+
 namespace amr_wind::utils {
 amrex::Box
 realbox_to_box(const amrex::RealBox& rbx, const amrex::Geometry& geom)

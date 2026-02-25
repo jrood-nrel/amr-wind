@@ -1,8 +1,18 @@
 #ifndef NONLINEARSGSTERM_H
 #define NONLINEARSGSTERM_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_REAL.H>
+#include <string>
+
 #include "amr-wind/equation_systems/icns/MomentumSource.H"
 #include "amr-wind/core/SimTime.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+} // namespace amr_wind
 
 namespace amr_wind::pde::icns {
 

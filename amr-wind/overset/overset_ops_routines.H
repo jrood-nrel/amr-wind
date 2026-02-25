@@ -1,11 +1,25 @@
 #ifndef OVERSET_OPS_ROUTINES_H
 #define OVERSET_OPS_ROUTINES_H
 
+#include <AMReX_REAL.H>
+
 #include "AMReX_iMultiFab.H"
 #include "AMReX_MultiFab.H"
 #include "amr-wind/equation_systems/vof/volume_fractions.H"
 #include "amr-wind/overset/overset_ops_K.H"
 #include "amr-wind/core/FieldRepo.H"
+
+namespace amr_wind {
+class Field;
+class FieldRepo;
+class IntField;
+} // namespace amr_wind
+namespace amrex {
+class MultiFab;
+class iMultiFab;
+template <class T, unsigned int N>
+struct GpuArray;
+} // namespace amrex
 
 namespace amr_wind::overset_ops {
 

@@ -1,14 +1,23 @@
 #include "amr-wind/equation_systems/temperature/source_terms/HurricaneTempForcing.H"
-#include "amr-wind/CFDSim.H"
-#include "amr-wind/utilities/trig_ops.H"
-#include "amr-wind/core/vs/vstraits.H"
-#include "amr-wind/wind_energy/ABL.H"
-#include "amr-wind/core/FieldUtils.H"
-#include "amr-wind/utilities/linear_interpolation.H"
 
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Vector.H>
+#include <string_view>
+
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/wind_energy/ABL.H"
+#include "amr-wind/utilities/linear_interpolation.H"
 #include "AMReX_ParmParse.H"
-#include "AMReX_Gpu.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Physics.H"
+#include "amr-wind/utilities/FieldPlaneAveraging.H"
+#include "amr-wind/wind_energy/ABLStatsBase.H"
 
 using namespace amrex::literals;
 

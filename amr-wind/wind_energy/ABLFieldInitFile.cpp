@@ -1,11 +1,14 @@
-#include <cmath>
+#include <AMReX.H>
+#include <AMReX_Array4.H>
+#include <string_view>
 
 #include "amr-wind/wind_energy/ABLFieldInitFile.H"
-#include "amr-wind/utilities/trig_ops.H"
-#include "AMReX_Gpu.H"
 #include "AMReX_ParmParse.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
 #include "AMReX_REAL.H"
+
+namespace amrex {
+class Geometry;
+} // namespace amrex
 
 using namespace amrex::literals;
 

@@ -1,3 +1,6 @@
+#include <AMReX_Vector.H>
+#include <string_view>
+
 #include "aw_test_utils/AmrexTestEnv.H"
 #include "pp_utils.H"
 #include "AMReX_ParmParse.H"

@@ -1,9 +1,41 @@
 #include "amr-wind/utilities/FieldPlaneAveragingFine.H"
+
+#include <__ostream/basic_ostream.h>
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuAsyncArray.H>
+#include <AMReX_GpuKernelInfo.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <algorithm>
+#include <cmath>
+#include <fstream>
+#include <utility>
+
 #include "amr-wind/utilities/constants.H"
 #include "AMReX_iMultiFab.H"
 #include "AMReX_MultiFabUtil.H"
 #include "AMReX_REAL.H"
-#include <algorithm>
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
+
+namespace amrex {
+namespace Gpu {
+struct Handler;
+} // namespace Gpu
+} // namespace amrex
 
 using namespace amrex::literals;
 

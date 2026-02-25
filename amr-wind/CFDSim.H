@@ -1,6 +1,9 @@
 #ifndef CFDSIM_H
 #define CFDSIM_H
 
+#include <memory>
+#include <utility>
+
 #include "AMReX_AmrCore.H"
 #include "amr-wind/core/SimTime.H"
 #include "amr-wind/core/FieldRepo.H"
@@ -8,9 +11,15 @@
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/MeshMap.H"
 #include "amr-wind/helics.H"
-
 #include "amr-wind/wind_energy/ABLReadERFFunction.H"
+#include "amr-wind/core/ExtSolver.H"
+#include "amr-wind/utilities/IOManager.H"
+#include "amr-wind/utilities/PostProcessing.H"
+
 class MultiBlockContainer;
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 /** AMR-Wind
  *
@@ -22,6 +31,7 @@ class PostProcessManager;
 class OversetManager;
 class ExtSolverMgr;
 class HelicsStorage;
+class MeshMap;
 
 namespace transport {
 class TransportModel;

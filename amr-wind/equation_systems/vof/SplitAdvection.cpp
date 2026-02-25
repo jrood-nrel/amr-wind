@@ -1,8 +1,29 @@
 #include "amr-wind/equation_systems/vof/SplitAdvection.H"
+
+#include <AMReX_Arena.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BaseFab.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_Dim3.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuControl.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_MultiFabUtil_3D_C.H>
+#include <array>
+
 #include "amr-wind/equation_systems/vof/split_advection.H"
 #include "AMReX_Geometry.H"
 #include "AMReX_MultiFabUtil.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/ScratchField.H"
+
+enum struct BC : std::uint8_t;
 
 using namespace amrex::literals;
 

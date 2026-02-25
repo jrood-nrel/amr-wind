@@ -1,6 +1,8 @@
 #ifndef MULTILEVELVECTOR_H
 #define MULTILEVELVECTOR_H
 
+#include <AMReX_REAL.H>
+
 #include "AMReX_Geometry.H"
 #include "AMReX_Vector.H"
 #include "AMReX_GpuContainers.H"
@@ -9,7 +11,12 @@
 #include "amr-wind/core/Field.H"
 #include "amr-wind/core/FieldRepo.H"
 
+namespace amrex {
+class Geometry;
+} // namespace amrex
+
 namespace amr_wind {
+class Field;
 
 /** Multi-level vector
  *  \ingroup utilities

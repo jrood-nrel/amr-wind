@@ -1,6 +1,9 @@
 #ifndef OCEAN_WAVES_H
 #define OCEAN_WAVES_H
 
+#include <memory>
+#include <string>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/ocean_waves/boundary_ops/OceanWavesBoundary.H"
@@ -12,6 +15,7 @@
 namespace amr_wind {
 
 class Field;
+class CFDSim;
 
 namespace ocean_waves {
 

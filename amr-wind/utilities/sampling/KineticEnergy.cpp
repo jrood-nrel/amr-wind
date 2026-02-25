@@ -1,11 +1,33 @@
 #include "amr-wind/utilities/sampling/KineticEnergy.H"
-#include "amr-wind/utilities/io_utils.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
+
 #include <AMReX_MultiFabUtil.H>
+#include <__ostream/basic_ostream.h>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_String.H>
+#include <AMReX_Vector.H>
+#include <AMReX_iMultiFab.H>
 #include <utility>
+#include <fstream>
+#include <iomanip>
+
 #include "AMReX_ParmParse.H"
 #include "amr-wind/utilities/IOManager.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
 
 using namespace amrex::literals;
 

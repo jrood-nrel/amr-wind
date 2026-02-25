@@ -1,19 +1,23 @@
 #include "amr-wind/equation_systems/temperature/source_terms/BodyForce.H"
-#include "amr-wind/CFDSim.H"
-#include "amr-wind/utilities/trig_ops.H"
-#include "amr-wind/utilities/linear_interpolation.H"
 
-#include "AMReX_ParmParse.H"
-#include "AMReX_Gpu.H"
-#include "AMReX_GpuContainers.H"
-#include "AMReX_IntVect.H"
-#include "AMReX_REAL.H"
-#include "AMReX_Utility.H"
-#include "AMReX_Vector.H"
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_String.H>
 #include <cstddef>
 #include <fstream>
-#include <ios>
 #include <string>
+#include <string_view>
+
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/utilities/linear_interpolation.H"
+#include "AMReX_ParmParse.H"
+#include "AMReX_GpuContainers.H"
+#include "AMReX_REAL.H"
+#include "AMReX_Vector.H"
 
 using namespace amrex::literals;
 

@@ -1,9 +1,15 @@
 #ifndef W2AWAVES_H
 #define W2AWAVES_H
 
-#include "amr-wind/ocean_waves/relaxation_zones/RelaxationZones.H"
+#include <AMReX_GpuContainers.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
 #include <vector>
 #include <complex>
+#include <string>
+
+#include "amr-wind/ocean_waves/relaxation_zones/RelaxationZones.H"
+#include "amr-wind/ocean_waves/OceanWavesTypes.H"
 #ifdef AMR_WIND_USE_W2A
 #include "Waves2AMR.h"
 #include "AMReX_REAL.H"

@@ -1,6 +1,9 @@
 #ifndef DENSITY_H
 #define DENSITY_H
 
+#include <AMReX_MLABecLaplacian.H>
+#include <string>
+
 #include "amr-wind/equation_systems/PDETraits.H"
 #include "amr-wind/equation_systems/SchemeTraits.H"
 #include "amr-wind/equation_systems/PDEHelpers.H"

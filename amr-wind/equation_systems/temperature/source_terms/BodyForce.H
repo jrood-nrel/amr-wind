@@ -2,12 +2,24 @@
 #define BODYFORCE2_H
 // This must be BODYFORCE2_H because another BODYFORCE_H exists
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
 #include <cstddef>
+#include <string>
+
 #include "amr-wind/equation_systems/temperature/TemperatureSource.H"
 #include "amr-wind/core/SimTime.H"
 #include "AMReX_GpuContainers.H"
 #include "AMReX_REAL.H"
 #include "AMReX_Vector.H"
+
+namespace amr_wind {
+class CFDSim;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 namespace amr_wind::pde::temperature {
 

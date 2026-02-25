@@ -1,6 +1,8 @@
 #ifndef SCRATCHFIELD_H
 #define SCRATCHFIELD_H
 
+#include <AMReX_IntVect.H>
+#include <AMReX_REAL.H>
 #include <string>
 #include <utility>
 
@@ -9,6 +11,10 @@
 #include "AMReX_MultiFab.H"
 #include "AMReX_Vector.H"
 #include "AMReX_PhysBCFunct.H"
+
+namespace amrex {
+class BCRec;
+} // namespace amrex
 
 namespace amr_wind {
 

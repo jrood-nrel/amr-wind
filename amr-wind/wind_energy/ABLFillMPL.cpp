@@ -1,8 +1,21 @@
+#include <AMReX_BC_TYPES.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_Vector.H>
 #include <utility>
+#include <algorithm>
+#include <string>
 
 #include "amr-wind/wind_energy/ABLFillMPL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/incflo_enums.H"
+#include "amr-wind/wind_energy/ABLModulatedPowerLaw.H"
+
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 namespace amr_wind {
+class SimTime;
 
 ABLFillMPL::ABLFillMPL(
     Field& field,

@@ -1,10 +1,19 @@
 #ifndef ACTUATORSOURCETAGGING_H
 #define ACTUATORSOURCETAGGING_H
 
+#include <string>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/Field.H"
 #include "amr-wind/core/IntField.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+class FieldRepo;
+class IntField;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

@@ -1,7 +1,15 @@
 #include "amr-wind/utilities/tagging/RefinementCriteria.H"
-#include "amr-wind/CFDSim.H"
+
+#include <AMReX_BLProfiler.H>
+#include <AMReX_GpuDevice.H>
+#include <string_view>
+#include <utility>
 
 #include "AMReX_ParmParse.H"
+
+namespace amrex {
+class TagBoxArray;
+} // namespace amrex
 
 namespace amr_wind {
 

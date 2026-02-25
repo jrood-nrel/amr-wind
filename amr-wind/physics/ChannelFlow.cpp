@@ -1,11 +1,47 @@
 #include "amr-wind/physics/ChannelFlow.H"
+
+#include <__ostream/basic_ostream.h>
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_ParReduce.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_Reduce.H>
+#include <AMReX_SPACE.H>
+#include <AMReX_Tuple.H>
+#include <AMReX_TypeList.H>
+#include <AMReX_Vector.H>
+#include <fstream>
+#include <iomanip>
+#include <limits>
+#include <numbers>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/CFDSim.H"
 #include "AMReX_iMultiFab.H"
 #include "AMReX_MultiFabUtil.H"
 #include "AMReX_ParmParse.H"
-#include "amr-wind/utilities/trig_ops.H"
 #include "amr-wind/utilities/DirectionSelector.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/incflo_enums.H"
+#include "amr-wind/turbulence/TurbulenceModel.H"
 
 using namespace amrex::literals;
 

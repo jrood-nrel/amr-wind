@@ -1,11 +1,23 @@
 #include "amr-wind/core/ScratchField.H"
-#include "amr-wind/core/FieldRepo.H"
 
-#include "AMReX_Gpu.H"
-#include "AMReX_FArrayBox.H"
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BCRec.H>
+#include <AMReX_BC_TYPES.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayCommI.H>
+#include <AMReX_FillPatchUtil_I.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Interpolater.H>
+#include <AMReX_Loop.H>
+#include <AMReX_Vector.H>
+
+#include "amr-wind/core/FieldRepo.H"
 #include "AMReX_Geometry.H"
 #include "AMReX_PhysBCFunct.H"
-#include "AMReX_FillPatchUtil.H"
 #include "AMReX_MultiFab.H"
 
 namespace amr_wind {

@@ -1,8 +1,16 @@
+#include <AMReX_Algorithm.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
 #include <cmath>
 #include <numbers>
+#include <string>
+#include <string_view>
 
 #include "amr-wind/physics/RayleighTaylorFieldInit.H"
-#include "AMReX_Gpu.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
 

@@ -6,21 +6,36 @@
 #include <AMReX_ParmParse.H>
 #include <AMReX_iMultiFab.H>
 #include <hydro_NodalProjector.H>
+#include <AMReX_INT.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <memory>
+#include <string>
+#include <utility>
 
 #include "amr-wind/incflo_enums.H"
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/core/SimTime.H"
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/overset/OversetOps.H"
-
 #include "amr-wind/wind_energy/ABLReadERFFunction.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+
 class MultiBlockContainer;
+namespace amrex {
+class FArrayBox;
+class MultiFab;
+template <typename FAB>
+class FabFactory;
+} // namespace amrex
+
 namespace amr_wind {
 namespace pde {
 class PDEBase;
 }
 class RefinementCriteria;
 class RefineCriteriaManager;
+class Field;
 } // namespace amr_wind
 
 /**

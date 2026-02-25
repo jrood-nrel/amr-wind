@@ -1,18 +1,23 @@
+#include <__ostream/basic_ostream.h>
+#include <_stdio.h>
+#include <gtest/gtest.h>
+#include <AMReX_IntVect.H>
+#include <AMReX_ParmParse.H>
 #include <sstream>
+#include <memory>
+#include <string>
+#include <string_view>
 
-#include "aw_test_utils/AmrexTest.H"
 #include "aw_test_utils/MeshTest.H"
 #include "aw_test_utils/OutputCapture.H"
-
 #include "AMReX_Box.H"
 #include "AMReX_BoxArray.H"
-#include "AMReX_BoxList.H"
 #include "AMReX_Geometry.H"
-#include "AMReX_RealBox.H"
 #include "AMReX_Vector.H"
-
 #include "amr-wind/utilities/tagging/CartBoxRefinement.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/utilities/tagging/RefinementCriteria.H"
+#include "aw_test_utils/AmrTestMesh.H"
 
 using namespace amrex::literals;
 

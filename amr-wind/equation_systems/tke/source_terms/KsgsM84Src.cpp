@@ -1,9 +1,21 @@
 #include <AMReX_Orientation.H>
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParmParse.H>
 
 #include "amr-wind/equation_systems/tke/source_terms/KsgsM84Src.H"
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/turbulence/TurbulenceModel.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/incflo_enums.H"
 
 using namespace amrex::literals;
 

@@ -1,8 +1,16 @@
 #ifndef FIELDREPO_H
 #define FIELDREPO_H
 
+#include <stddef.h>
+#include <AMReX_BLassert.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabFactory.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
 #include <string>
 #include <unordered_map>
+#include <memory>
 
 #include "amr-wind/core/FieldDescTypes.H"
 #include "amr-wind/core/FieldUtils.H"
@@ -10,10 +18,14 @@
 #include "amr-wind/core/IntField.H"
 #include "amr-wind/core/ScratchField.H"
 #include "amr-wind/core/IntScratchField.H"
-
 #include "AMReX_AmrCore.H"
 #include "AMReX_MultiFab.H"
 #include "AMReX_iMultiFab.H"
+
+namespace amrex {
+class BoxArray;
+class DistributionMapping;
+} // namespace amrex
 
 namespace amr_wind {
 

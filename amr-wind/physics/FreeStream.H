@@ -1,14 +1,16 @@
 #ifndef FREESTREAM_H
 #define FREESTREAM_H
 
+#include <unordered_map>
+#include <memory>
+#include <string>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/Field.H"
 #include "amr-wind/physics/udfs/UDF.H"
 
-#include <unordered_map>
-#include <memory>
-
 namespace amr_wind {
+class CFDSim;
 
 /** Freestream physics
  *  \ingroup physics

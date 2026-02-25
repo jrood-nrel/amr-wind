@@ -1,12 +1,34 @@
 #ifndef SAMPLINGCONTAINER_H
 #define SAMPLINGCONTAINER_H
 
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_ArrayOfStructs.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Particle.H>
+#include <AMReX_StructOfArrays.H>
+#include <AMReX_Vector.H>
 #include <memory>
 #include <cstdint>
+#include <cmath>
+#include <map>
+#include <utility>
+#include <vector>
 
 #include "AMReX_AmrParticles.H"
 #include "amr-wind/utilities/DerivedQuantity.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/FieldDescTypes.H"
+
+namespace amr_wind {
+class DerivedQtyMgr;
+class FieldRepo;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

@@ -1,12 +1,16 @@
 #ifndef SIMTIME_H
 #define SIMTIME_H
 
+#include <AMReX_Algorithm.H>
+#include <algorithm>
+#include <cmath>
+#include <limits>
+#include <vector>
+
 #include "AMReX_REAL.H"
 #include "AMReX_GpuQualifiers.H"
 #include "AMReX_Extension.H"
 #include "AMReX_Vector.H"
-#include <algorithm>
-#include <cmath>
 
 using namespace amrex::literals;
 

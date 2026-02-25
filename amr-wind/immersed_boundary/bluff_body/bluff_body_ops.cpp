@@ -1,17 +1,38 @@
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
 #include <numbers>
+#include <cmath>
+#include <utility>
+
 #include "amr-wind/immersed_boundary/bluff_body/bluff_body_ops.H"
 #include "amr-wind/core/MultiParser.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
-#include "amr-wind/utilities/io_utils.H"
-
 #include "amr-wind/fvm/gradient.H"
 #include "amr-wind/core/field_ops.H"
-
 // Used for mms
 #include "amr-wind/physics/ConvectingTaylorVortex.H"
-
-#include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/Physics.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/immersed_boundary/bluff_body/BluffBody.H"
+
+namespace amr_wind {
+namespace ib {
+struct IBInfo;
+} // namespace ib
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

@@ -1,7 +1,14 @@
 #ifndef AMDNOTHERM_H
 #define AMDNOTHERM_H
 
+#include <AMReX_Algorithm.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Extension.H>
+#include <AMReX_GpuQualifiers.H>
 #include <string>
+#include <limits>
+
 #include "amr-wind/incflo_enums.H"
 #include "amr-wind/turbulence/TurbModelBase.H"
 #include "amr-wind/core/FieldRepo.H"
@@ -9,6 +16,14 @@
 #include "AMReX_Config.H"
 #include "AMReX_AmrCore.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/turbulence/TurbulenceModel.H"
+
+enum struct DiffusionType : std::uint8_t;
+namespace amr_wind {
+class CFDSim;
+class Field;
+enum class FieldState : std::uint8_t;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

@@ -1,7 +1,17 @@
 #ifndef LAMINARMODEL_H
 #define LAMINARMODEL_H
 
+#include <string>
+
 #include "amr-wind/turbulence/TurbModel.H"
+#include "amr-wind/turbulence/TurbulenceModel.H"
+
+enum struct DiffusionType : std::uint8_t;
+namespace amr_wind {
+class CFDSim;
+class Field;
+enum class FieldState : std::uint8_t;
+} // namespace amr_wind
 
 namespace amr_wind::turbulence {
 

@@ -1,6 +1,21 @@
 #include "amr-wind/utilities/tagging/BoxRefiner.H"
+
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Vector.H>
+
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/core/vs/vstraits.H"
+
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

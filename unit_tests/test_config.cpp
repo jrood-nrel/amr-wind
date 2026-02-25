@@ -3,13 +3,14 @@
  *  Tests various configurations for GPU builds
  */
 
+#include <iostream>
+#include <string>
+
 #include "gtest/gtest.h"
 #include "amr-wind/AMRWindVersion.H"
 #include "amr-wind/utilities/console_io.H"
-#include "AMReX_ccse-mpi.H"
 #include "AMReX_ParallelDescriptor.H"
 #include "AMReX_Print.H"
-#include "AMReX_Gpu.H"
 #include "AMReX_REAL.H"
 
 using namespace amrex::literals;

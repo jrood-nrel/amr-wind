@@ -1,6 +1,9 @@
 #include "AmrTestMesh.H"
-#include "gtest/gtest.h"
-#include "AMReX_MultiFab.H"
+
+#include <AMReX.H>
+
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
 
 namespace amr_wind_tests {
 

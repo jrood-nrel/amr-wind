@@ -1,7 +1,9 @@
 #ifndef PDEBASE_H
 #define PDEBASE_H
 
+#include <AMReX_REAL.H>
 #include <string>
+#include <memory>
 
 #include "amr-wind/core/Factory.H"
 #include "amr-wind/core/CollMgr.H"
@@ -9,11 +11,14 @@
 #include "amr-wind/core/FieldDescTypes.H"
 #include "amr-wind/incflo_enums.H"
 
+enum struct DiffusionType : std::uint8_t;
+
 namespace amr_wind {
 
 class CFDSim;
 
 namespace pde {
+struct PDEFields;
 
 /**
  *  \defgroup eqsys Equation Systems

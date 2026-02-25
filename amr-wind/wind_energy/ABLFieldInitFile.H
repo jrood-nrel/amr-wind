@@ -1,8 +1,9 @@
 #ifndef ABLFIELDINITFILE_H
 #define ABLFIELDINITFILE_H
 
-#include "amr-wind/core/Field.H"
+#include <string>
 
+#include "amr-wind/core/Field.H"
 #include "AMReX_Array.H"
 #include "AMReX_Array4.H"
 #include "AMReX_Box.H"
@@ -10,6 +11,10 @@
 #include "AMReX_REAL.H"
 #include "AMReX_Vector.H"
 #include "AMReX_Gpu.H"
+
+namespace amrex {
+class Geometry;
+} // namespace amrex
 
 namespace amr_wind {
 

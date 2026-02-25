@@ -1,6 +1,10 @@
 #include "amr-wind/wind_energy/actuator/disk/Joukowsky_ops.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
-#include "amr-wind/utilities/io_utils.H"
+
+#include <__ostream/basic_ostream.h>
+#include <AMReX.H>
+#include <AMReX_RealBox.H>
+#include <sstream>
+
 #include "amr-wind/wind_energy/actuator/disk/disk_ops.H"
 #include "AMReX_REAL.H"
 

@@ -1,9 +1,17 @@
 #include "amr-wind/utilities/sampling/LidarSampler.H"
+
+#include <AMReX.H>
+#include <AMReX_BLassert.H>
+#include <cmath>
+#include <string_view>
+
 #include "amr-wind/CFDSim.H"
-#include "amr-wind/utilities/tensor_ops.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/utilities/sampling/SamplerBase.H"
+#include "amr-wind/utilities/trig_ops.H"
 
 using namespace amrex::literals;
 

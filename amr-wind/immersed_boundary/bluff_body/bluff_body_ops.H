@@ -1,13 +1,37 @@
 #ifndef BLUFF_BODY_OPS_H
 #define BLUFF_BODY_OPS_H
 
+#include <AMReX_BLProfiler.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <string>
+#include <type_traits>
+
 #include "amr-wind/immersed_boundary/bluff_body/BluffBody.H"
 #include "amr-wind/immersed_boundary/IBTypes.H"
 #include "amr-wind/immersed_boundary/IBOps.H"
 #include "amr-wind/core/MultiParser.H"
 #include "amr-wind/fvm/gradient.H"
-
 #include "AMReX_MultiFabUtil.H"
+
+namespace amr_wind {
+class CFDSim;
+namespace ib {
+namespace ops {
+template <typename GeomTrait, typename = void>
+struct ComputeForceOp;
+template <typename GeomTrait, typename = void>
+struct ProcessOutputsOp;
+template <typename GeomTrait, typename = void>
+struct UpdatePosOp;
+template <typename GeomTrait, typename = void>
+struct UpdateVelOp;
+} // namespace ops
+struct BluffBodyBaseData;
+struct BluffBodyType;
+struct IBInfo;
+} // namespace ib
+} // namespace amr_wind
 
 namespace amr_wind::ib {
 namespace bluff_body {

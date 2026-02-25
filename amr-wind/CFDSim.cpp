@@ -1,4 +1,9 @@
 #include "amr-wind/CFDSim.H"
+
+#include <AMReX_Vector.H>
+#include <string>
+#include <string_view>
+
 #include "amr-wind/transport_models/TransportModel.H"
 #include "amr-wind/turbulence/TurbulenceModel.H"
 #include "amr-wind/utilities/IOManager.H"
@@ -6,8 +11,14 @@
 #include "amr-wind/overset/OversetManager.H"
 #include "amr-wind/core/ExtSolver.H"
 #include "amr-wind/wind_energy/ABL.H"
-
 #include "AMReX_ParmParse.H"
+#include "amr-wind/core/MeshMap.H"
+#include "amr-wind/helics.H"
+#include "amr-wind/wind_energy/ABLAnelastic.H"
+
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 namespace amr_wind {
 

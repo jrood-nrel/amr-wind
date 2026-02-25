@@ -1,5 +1,24 @@
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Print.H>
+#include <AMReX_String.H>
+#include <AMReX_Utility.H>
+#include <AMReX_Vector.H>
 #include <algorithm>
 #include <memory>
+#include <numeric>
+#include <set>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/wind_energy/actuator/Actuator.H"
 #include "amr-wind/wind_energy/actuator/ActParser.H"
 #include "amr-wind/wind_energy/actuator/ActuatorContainer.H"
@@ -8,6 +27,11 @@
 #include "amr-wind/utilities/io_utils.H"
 #include "amr-wind/utilities/IOManager.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/Slice.H"
+#include "amr-wind/wind_energy/actuator/actuator_types.H"
+#include "amr-wind/wind_energy/actuator/actuator_utils.H"
 
 using namespace amrex::literals;
 

@@ -1,12 +1,23 @@
 #ifndef MULTIPHASE_H
 #define MULTIPHASE_H
 
+#include <AMReX_Vector.H>
 #include <cstdint>
+#include <string>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/Field.H"
 #include "amr-wind/core/IntField.H"
 #include "amr-wind/core/ScratchField.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/FieldDescTypes.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+class IntField;
+class ScratchField;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

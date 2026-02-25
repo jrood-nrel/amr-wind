@@ -1,7 +1,12 @@
 #ifndef BOX_H
 #define BOX_H
 
+#include <AMReX_REAL.H>
+#include <string>
+
 #include "amr-wind/immersed_boundary/bluff_body/BluffBody.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/immersed_boundary/IBTypes.H"
 
 namespace amr_wind::ib {
 

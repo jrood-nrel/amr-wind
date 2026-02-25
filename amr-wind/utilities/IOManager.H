@@ -1,13 +1,21 @@
 #ifndef IOMANAGER_H
 #define IOMANAGER_H
 
+#include <AMReX_IntVect.H>
+#include <AMReX_Utility.H>
 #include <string>
 #include <unordered_map>
 #include <set>
+#include <memory>
 
 #include "AMReX_Vector.H"
 #include "AMReX_BoxArray.H"
 #include "AMReX_DistributionMapping.H"
+
+namespace amrex {
+class BoxArray;
+class DistributionMapping;
+} // namespace amrex
 
 namespace amr_wind {
 

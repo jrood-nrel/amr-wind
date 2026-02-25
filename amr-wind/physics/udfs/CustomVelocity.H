@@ -1,6 +1,14 @@
 #ifndef CUSTOM_VELOCITY_H
 #define CUSTOM_VELOCITY_H
 
+#include <AMReX.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_Orientation.H>
+#include <string>
+
 #include "AMReX_Geometry.H"
 #include "AMReX_Gpu.H"
 #include "AMReX_REAL.H"

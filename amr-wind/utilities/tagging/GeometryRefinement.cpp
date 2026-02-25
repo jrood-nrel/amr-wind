@@ -1,8 +1,16 @@
 #include "amr-wind/utilities/tagging/GeometryRefinement.H"
-#include "amr-wind/CFDSim.H"
 
-#include "AMReX.H"
+#include <AMReX_AmrCore.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <string_view>
+#include <utility>
+
+#include "amr-wind/CFDSim.H"
 #include "AMReX_ParmParse.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/utilities/index_operations.H"
 
 namespace amr_wind {
 

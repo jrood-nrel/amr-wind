@@ -1,15 +1,22 @@
 #include <AMReX.H>
 #include <AMReX_Print.H>
 #include <AMReX_PlotFileUtil.H>
-#include <AMReX_MultiFabUtil.H>
-#include <AMReX_ParallelDescriptor.H>
-#include <limits>
-#include <iterator>
-#include <fstream>
-#include <algorithm>
-#include <iostream>
+#include <__ostream/basic_ostream.h>
+#include <_time.h>
+#include <AMReX_Array.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_Dim3.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_INT.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
 #include <fstream>
 #include <ctime>
+#include <string>
 
 enum format { csv, hdf5 };
 

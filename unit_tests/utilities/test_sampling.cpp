@@ -1,4 +1,33 @@
+#include <__ostream/basic_ostream.h>
+#include <_stdio.h>
+#include <gtest/gtest.h>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Particle.H>
+#include <AMReX_ParticleContainerI.H>
+#include <AMReX_ParticleTile.H>
+#include <AMReX_RealVect.H>
+#include <AMReX_iMultiFab.H>
 #include <numbers>
+#include <fstream>
+#include <limits>
+#include <map>
+#include <string>
+#include <string_view>
+#include <utility>
+#include <vector>
+
 #include "aw_test_utils/MeshTest.H"
 #include "amr-wind/utilities/sampling/Sampling.H"
 #include "amr-wind/utilities/sampling/SamplingContainer.H"
@@ -9,9 +38,16 @@
 #include "amr-wind/utilities/sampling/RadarSampler.H"
 #include "amr-wind/utilities/sampling/SamplingUtils.H"
 #include "AMReX_Vector.H"
-#include "amr-wind/core/vs/vector_space.H"
-#include "amr-wind/utilities/tensor_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/utilities/sampling/SamplerBase.H"
+#include "aw_test_utils/AmrTestMesh.H"
 
 using namespace amrex::literals;
 

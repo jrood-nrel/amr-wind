@@ -1,6 +1,8 @@
 #include "turb_utils.H"
 
+#include <AMReX_Vector.H>
 #include <set>
+#include <string_view>
 
 #include "AMReX_ParmParse.H"
 

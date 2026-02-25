@@ -1,12 +1,50 @@
-#include "aw_test_utils/MeshTest.H"
-#include "test_act_utils.H"
+#include <__math/traits.h>
+#include <gtest/gtest.h>
+#include <AMReX_Box.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Particle.H>
+#include <AMReX_Vector.H>
+#include <cmath>
+#include <limits>
+#include <set>
+#include <string>
+#include <string_view>
+#include <type_traits>
 
+#include "aw_test_utils/MeshTest.H"
 #include "amr-wind/wind_energy/actuator/Actuator.H"
 #include "amr-wind/wind_energy/actuator/ActuatorContainer.H"
 #include "amr-wind/wind_energy/actuator/ActuatorModel.H"
 #include "amr-wind/wind_energy/actuator/ActParser.H"
 #include "amr-wind/wind_energy/actuator/disk/Joukowsky_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/wind_energy/actuator/actuator_opsI.H"
+#include "amr-wind/wind_energy/actuator/actuator_types.H"
+#include "amr-wind/wind_energy/actuator/disk/Joukowsky.H"
+
+namespace amr_wind {
+namespace actuator {
+namespace ops {
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ComputeForceOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct InitDataOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ProcessOutputsOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ReadInputsOp;
+} // namespace ops
+} // namespace actuator
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

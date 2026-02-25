@@ -1,12 +1,57 @@
-#include "aw_test_utils/MeshTest.H"
-#include "test_act_utils.H"
+#include <__ostream/basic_ostream.h>
+#include <_stdio.h>
+#include <gtest/gtest.h>
+#include <math.h>
+#include <AMReX_Box.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Particle.H>
+#include <AMReX_Vector.H>
+#include <fstream>
+#include <limits>
+#include <set>
+#include <sstream>
+#include <string>
+#include <string_view>
 
+#include "aw_test_utils/MeshTest.H"
 #include "amr-wind/wind_energy/actuator/Actuator.H"
 #include "amr-wind/wind_energy/actuator/ActuatorContainer.H"
 #include "amr-wind/wind_energy/actuator/ActuatorModel.H"
 #include "amr-wind/wind_energy/actuator/ActParser.H"
 #include "amr-wind/wind_energy/actuator/wing/fixed_wing_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/Slice.H"
+#include "amr-wind/core/vs/tensor.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/wind_energy/actuator/FLLC.H"
+#include "amr-wind/wind_energy/actuator/actuator_opsI.H"
+#include "amr-wind/wind_energy/actuator/actuator_types.H"
+#include "amr-wind/wind_energy/actuator/wing/FixedWing.H"
+#include "amr-wind/wind_energy/actuator/wing/wing_ops.H"
+
+namespace amr_wind {
+namespace actuator {
+namespace ops {
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ComputeForceOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct InitDataOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ProcessOutputsOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ReadInputsOp;
+} // namespace ops
+} // namespace actuator
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

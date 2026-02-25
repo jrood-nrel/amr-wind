@@ -1,8 +1,22 @@
 #include "amr-wind/utilities/tagging/OversetRefinement.H"
-#include "amr-wind/CFDSim.H"
 
-#include "AMReX.H"
+#include <_stdlib.h>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_TagBox.H>
+#include <AMReX_iMultiFab.H>
+#include <cmath>
+#include <string_view>
+#include <utility>
+
+#include "amr-wind/CFDSim.H"
 #include "AMReX_ParmParse.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
 
 namespace amr_wind {
 

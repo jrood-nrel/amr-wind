@@ -1,7 +1,11 @@
 #include "amr-wind/core/ViewField.H"
+
+#include <AMReX_MakeType.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Vector.H>
+
 #include "amr-wind/core/Field.H"
 #include "amr-wind/core/ScratchField.H"
-#include "amr-wind/core/FieldRepo.H"
 
 namespace amr_wind {
 

@@ -1,9 +1,16 @@
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
 #include <memory>
 
 #include "amr-wind/physics/BoussinesqBubble.H"
 #include "amr-wind/physics/BoussinesqBubbleFieldInit.H"
 #include "amr-wind/CFDSim.H"
-#include "amr-wind/wind_energy/ABLWallFunction.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/equation_systems/PDEFields.H"
 
 namespace amr_wind {
 

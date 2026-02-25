@@ -1,8 +1,10 @@
 #ifndef ABLFIELDINIT_H
 #define ABLFIELDINIT_H
 
-#include "amr-wind/core/Field.H"
+#include <AMReX_GpuContainers.H>
+#include <string>
 
+#include "amr-wind/core/Field.H"
 #include "AMReX_Array.H"
 #include "AMReX_Array4.H"
 #include "AMReX_Box.H"
@@ -10,6 +12,14 @@
 #include "AMReX_REAL.H"
 #include "AMReX_Vector.H"
 #include "AMReX_Gpu.H"
+
+namespace amr_wind {
+class Field;
+} // namespace amr_wind
+namespace amrex {
+class Geometry;
+class MultiFab;
+} // namespace amrex
 
 using namespace amrex::literals;
 

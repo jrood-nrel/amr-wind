@@ -1,11 +1,25 @@
 #ifndef DRAGTEMPFORCING_H
 #define DRAGTEMPFORCING_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/equation_systems/temperature/TemperatureSource.H"
 #include "amr-wind/core/SimTime.H"
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/constants.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

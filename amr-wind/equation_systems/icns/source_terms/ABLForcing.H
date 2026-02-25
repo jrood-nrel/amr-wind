@@ -1,11 +1,31 @@
 #ifndef ABLFORCING_H
 #define ABLFORCING_H
 
+#include <__ostream/basic_ostream.h>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_Vector.H>
+#include <cmath>
+#include <fstream>
+#include <iomanip>
+#include <numbers>
+#include <string>
+
 #include "amr-wind/equation_systems/icns/MomentumSource.H"
 #include "amr-wind/core/SimTime.H"
 #include "amr-wind/utilities/trig_ops.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

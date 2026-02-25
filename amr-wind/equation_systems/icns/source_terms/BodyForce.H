@@ -1,12 +1,24 @@
 #ifndef BODYFORCE_H
 #define BODYFORCE_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <cstddef>
+#include <string>
+
 #include "amr-wind/equation_systems/icns/MomentumSource.H"
 #include "amr-wind/core/SimTime.H"
 #include "AMReX_GpuContainers.H"
 #include "AMReX_REAL.H"
 #include "AMReX_Vector.H"
-#include <cstddef>
+
+namespace amr_wind {
+class CFDSim;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

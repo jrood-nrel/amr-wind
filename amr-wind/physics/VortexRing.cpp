@@ -1,13 +1,48 @@
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayBase.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_LO_BCTYPES.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MLLinOp.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_ParallelReduce.H>
 #include <numbers>
+#include <algorithm>
+#include <cmath>
+#include <limits>
+#include <memory>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/physics/VortexRing.H"
 #include "amr-wind/CFDSim.H"
 #include "AMReX_ParmParse.H"
-#include "amr-wind/utilities/trig_ops.H"
 #include "AMReX_MLNodeLaplacian.H"
 #include "AMReX_MLMG.H"
-#include "AMReX_FillPatchUtil.H"
 #include "amr-wind/core/FieldRepo.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/ScratchField.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/ViewField.H"
+#include "amr-wind/incflo_enums.H"
+
+namespace amrex {
+template <typename FAB>
+class FabFactory;
+} // namespace amrex
 
 using namespace amrex::literals;
 

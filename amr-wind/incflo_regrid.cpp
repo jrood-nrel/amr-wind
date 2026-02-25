@@ -1,4 +1,9 @@
+#include <AMReX_BLProfiler.H>
+#include <AMReX_Print.H>
+#include <AMReX_REAL.H>
+
 #include "amr-wind/incflo.H"
+#include "amr-wind/core/FieldRepo.H"
 
 // Make a new level using provided BoxArray and DistributionMapping and
 // fill with interpolated coarse level data.

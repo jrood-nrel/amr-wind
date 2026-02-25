@@ -1,9 +1,18 @@
 #ifndef ACTUATORCONTAINER_H
 #define ACTUATORCONTAINER_H
 
-#include "amr-wind/core/vs/vector_space.H"
+#include <AMReX_GpuContainers.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <memory>
 
+#include "amr-wind/core/vs/vector_space.H"
 #include "AMReX_AmrParticles.H"
+#include "amr-wind/core/vs/vector.H"
+
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 namespace amr_wind {
 

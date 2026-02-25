@@ -1,13 +1,21 @@
 #ifndef CARTBOXREFINEMENT_H
 #define CARTBOXREFINEMENT_H
 
+#include <AMReX_BoxArray.H>
+#include <AMReX_REAL.H>
 #include <iosfwd>
+#include <string>
 
 #include "amr-wind/utilities/tagging/RefinementCriteria.H"
 #include "AMReX_RealBox.H"
 #include "AMReX_Vector.H"
 
+namespace amrex {
+class AmrCore;
+} // namespace amrex
+
 namespace amr_wind {
+class CFDSim;
 
 /** Static refinement with Cartesian-aligned bounding boxes
  *  \ingroup amr_utils wind

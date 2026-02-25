@@ -1,10 +1,26 @@
 #ifndef GEOMETRYREFINEMENT_H
 #define GEOMETRYREFINEMENT_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_REAL.H>
+#include <AMReX_TagBox.H>
+#include <AMReX_Vector.H>
+#include <memory>
+#include <string>
+
 #include "amr-wind/utilities/index_operations.H"
 #include "amr-wind/utilities/tagging/RefinementCriteria.H"
+#include "amr-wind/core/Factory.H"
+
+namespace amrex {
+class Geometry;
+class RealBox;
+} // namespace amrex
 
 namespace amr_wind {
+class CFDSim;
+
 namespace tagging {
 
 /** Abstract definition of shapes for AMR

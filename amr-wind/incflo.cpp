@@ -1,14 +1,26 @@
 #include "amr-wind/incflo.H"
-#include "amr-wind/wind_energy/ABL.H"
+
+#include <AMReX.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_Print.H>
+#include <iomanip>
+#include <string_view>
+
 #include "amr-wind/utilities/tagging/RefinementCriteria.H"
 #include "amr-wind/equation_systems/PDEBase.H"
 #include "amr-wind/turbulence/TurbulenceModel.H"
-#include "amr-wind/equation_systems/SchemeTraits.H"
 #include "amr-wind/utilities/IOManager.H"
 #include "amr-wind/utilities/PostProcessing.H"
 #include "amr-wind/overset/OversetManager.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/MeshMap.H"
+#include "amr-wind/core/Physics.H"
 
 using namespace amrex::literals;
 

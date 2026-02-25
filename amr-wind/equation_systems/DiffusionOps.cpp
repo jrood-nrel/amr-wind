@@ -1,8 +1,27 @@
 #include "amr-wind/equation_systems/DiffusionOps.H"
-#include "amr-wind/utilities/console_io.H"
 
+#include <AMReX_AmrCore.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayBase.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MLABecLaplacian.H>
+#include <AMReX_MLCellABecLap.H>
+#include <AMReX_MLCellLinOp.H>
+#include <AMReX_MLLinOp.H>
+#include <AMReX_MLMG.H>
+#include <AMReX_ParallelReduce.H>
+#include <AMReX_ParmParse.H>
+#include <algorithm>
+#include <utility>
+
+#include "amr-wind/utilities/console_io.H"
 #include "AMReX_MLTensorOp.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/ScratchField.H"
 
 using namespace amrex::literals;
 

@@ -1,8 +1,16 @@
 #include "amr-wind/physics/FreeStream.H"
+
+#include <AMReX.H>
+#include <AMReX_Vector.H>
+#include <string_view>
+
 #include "amr-wind/CFDSim.H"
 #include "AMReX_ParmParse.H"
-#include "amr-wind/utilities/trig_ops.H"
 #include "amr-wind/physics/udfs/UDF.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/equation_systems/PDEFields.H"
 
 namespace amr_wind {
 

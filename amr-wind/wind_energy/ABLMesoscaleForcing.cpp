@@ -1,11 +1,18 @@
 #include "amr-wind/wind_energy/ABLMesoscaleForcing.H"
+
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_Vector.H>
+#include <cmath>
+#include <string_view>
+
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "AMReX_Print.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
-
-// WORKAROUND
-#include <fstream>
+#include "amr-wind/CFDSim.H"
 
 using namespace amrex::literals;
 

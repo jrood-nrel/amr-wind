@@ -1,18 +1,62 @@
 #ifndef ICNS_ADVECTION_H
 #define ICNS_ADVECTION_H
 
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Arena.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BCRec.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuControl.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_MultiFabUtil_3D_C.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Print.H>
+#include <AMReX_SPACE.H>
+#include <AMReX_String.H>
+#include <AMReX_Vector.H>
+#include <hydro_godunov_ppm.H>
+#include <array>
+#include <memory>
+#include <string>
+#include <string_view>
+
 #include "amr-wind/equation_systems/AdvOp_Godunov.H"
 #include "amr-wind/equation_systems/AdvOp_MOL.H"
 #include "amr-wind/equation_systems/icns/icns.H"
 #include "amr-wind/core/Physics.H"
-
 #include "AMReX_MultiFabUtil.H"
 #include "hydro_MacProjector.H"
 #include "hydro_mol.H"
 #include "hydro_utils.H"
-
 #include "amr-wind/utilities/diagnostics.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/convection/Godunov.H"
+#include "amr-wind/convection/MOL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/MLMGOptions.H"
+#include "amr-wind/core/ScratchField.H"
+#include "amr-wind/equation_systems/PDEFields.H"
+#include "amr-wind/equation_systems/PDEOps.H"
+#include "amr-wind/equation_systems/SchemeTraits.H"
+#include "amr-wind/equation_systems/vof/vof_momentum_flux.H"
+
+namespace amr_wind {
+class PhysicsMgr;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

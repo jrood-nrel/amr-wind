@@ -2,10 +2,19 @@
 #define KOSOVIC_H
 
 #include <string>
+
 #include "amr-wind/turbulence/TurbModelBase.H"
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/utilities/constants.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/turbulence/TurbulenceModel.H"
+
+enum struct DiffusionType : std::uint8_t;
+namespace amr_wind {
+class CFDSim;
+class Field;
+enum class FieldState : std::uint8_t;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

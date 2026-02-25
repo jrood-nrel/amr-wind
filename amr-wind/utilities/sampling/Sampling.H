@@ -1,15 +1,28 @@
 #ifndef SAMPLING_H
 #define SAMPLING_H
 
+#include <AMReX_PlotFileUtil.H>
+#include <stddef.h>
+#include <AMReX_Vector.H>
 #include <memory>
+#include <string>
 
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/DerivedQuantity.H"
 #include "amr-wind/utilities/PostProcessing.H"
 #include "amr-wind/utilities/sampling/SamplerBase.H"
 #include "amr-wind/utilities/sampling/SamplingContainer.H"
-#include <AMReX_PlotFileUtil.H>
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class DerivedQtyMgr;
+class Field;
+class IntField;
+namespace sampling {
+class SamplingContainer;
+} // namespace sampling
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

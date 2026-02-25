@@ -1,7 +1,16 @@
 #ifndef POSTPROCESSING_H
 #define POSTPROCESSING_H
 
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_Print.H>
+#include <AMReX_Vector.H>
 #include <memory>
+#include <cmath>
+#include <limits>
+#include <string>
+#include <string_view>
+
 #include "amr-wind/core/Factory.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"

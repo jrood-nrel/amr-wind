@@ -1,6 +1,18 @@
+#include <gtest/gtest.h>
+#include <stddef.h>
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuMemory.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Vector.H>
 #include <utility>
+#include <cmath>
+#include <limits>
+#include <string>
 
-#include "aw_test_utils/AmrexTest.H"
 #include "amr-wind/utilities/tensor_ops.H"
 #include "AMReX_REAL.H"
 

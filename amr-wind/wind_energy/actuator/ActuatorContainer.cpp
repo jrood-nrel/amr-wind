@@ -1,10 +1,34 @@
-#include <algorithm>
+#include <stddef.h>
+#include <AMReX_AmrCore.H>
+#include <AMReX_AmrParticles.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_ArrayOfStructs.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_DistributionMapping.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_INT.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_Particle.H>
+#include <AMReX_ParticleContainerI.H>
+#include <AMReX_ParticleTile.H>
+#include <cmath>
+#include <map>
+#include <numeric>
+#include <utility>
+
 #include "amr-wind/wind_energy/actuator/ActuatorContainer.H"
-#include "amr-wind/wind_energy/actuator/Actuator.H"
 #include "amr-wind/core/gpu_utils.H"
 #include "amr-wind/core/Field.H"
-#include "AMReX_Scan.H"
-#include "AMReX_Print.H"
 #include "AMReX_REAL.H"
 
 using namespace amrex::literals;

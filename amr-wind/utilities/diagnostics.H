@@ -1,7 +1,20 @@
 #ifndef DIAGNOSTICS_H
 #define DIAGNOSTICS_H
 
+#include <AMReX_Array.H>
+#include <AMReX_REAL.H>
+#include <string>
+
 #include "AMReX_MultiFabUtil.H"
+
+namespace amr_wind {
+class Field;
+class FieldRepo;
+} // namespace amr_wind
+namespace amrex {
+class MultiFab;
+class iMultiFab;
+} // namespace amrex
 
 namespace amr_wind::diagnostics {
 

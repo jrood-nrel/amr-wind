@@ -1,7 +1,9 @@
 #include "amr-wind/wind_energy/ABLMesoscaleInput.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
-#include "AMReX_ParallelDescriptor.H"
-#include "AMReX_Print.H"
+
+#include <AMReX.H>
+#include <string_view>
+#include <utility>
+
 #include "AMReX_ParmParse.H"
 
 namespace amr_wind {

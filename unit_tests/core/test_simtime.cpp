@@ -1,3 +1,10 @@
+#include <__ostream/basic_ostream.h>
+#include <gtest/gtest.h>
+#include <iostream>
+#include <limits>
+#include <string>
+#include <string_view>
+
 #include "aw_test_utils/AmrexTest.H"
 #include "AMReX_ParmParse.H"
 #include "amr-wind/core/SimTime.H"

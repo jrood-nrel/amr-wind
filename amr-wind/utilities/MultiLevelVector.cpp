@@ -1,5 +1,23 @@
 #include "amr-wind/utilities/MultiLevelVector.H"
 
+#include <AMReX_BLassert.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_PODVector.H>
+#include <AMReX_Vector.H>
+#include <utility>
+
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+
 namespace amr_wind {
 
 void MultiLevelVector::resize(

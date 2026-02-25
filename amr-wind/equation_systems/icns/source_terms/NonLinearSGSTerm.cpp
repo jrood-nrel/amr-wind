@@ -1,8 +1,14 @@
 #include "amr-wind/equation_systems/icns/source_terms/NonLinearSGSTerm.H"
-#include "amr-wind/CFDSim.H"
-#include "amr-wind/turbulence/LES/Kosovic.H"
 
-#include "AMReX_Gpu.H"
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParmParse.H>
+
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
 
 namespace amr_wind::pde::icns {
 

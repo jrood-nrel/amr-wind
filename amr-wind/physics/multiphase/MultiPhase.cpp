@@ -1,15 +1,49 @@
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_Print.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_String.H>
+#include <AMReX_iMultiFab.H>
 #include <numbers>
+#include <cmath>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/physics/multiphase/MultiPhase.H"
 #include "amr-wind/equation_systems/vof/volume_fractions.H"
 #include "amr-wind/physics/multiphase/hydrostatic_ops.H"
 #include "amr-wind/CFDSim.H"
-#include "amr-wind/fvm/filter.H"
 #include "amr-wind/core/field_ops.H"
-#include "amr-wind/equation_systems/BCOps.H"
 #include "amr-wind/core/SimTime.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_MultiFabUtil.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/boundary_conditions/BCInterface.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/ScratchField.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/equation_systems/PDEFields.H"
+#include "amr-wind/utilities/IOManager.H"
 
 using namespace amrex::literals;
 

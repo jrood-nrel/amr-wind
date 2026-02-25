@@ -1,14 +1,34 @@
+#include <gtest/gtest.h>
+#include <stdlib.h>
+#include <AMReX_Algorithm.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
 #include <numbers>
+#include <cmath>
+#include <limits>
+#include <string>
+#include <string_view>
+
 #include "aw_test_utils/MeshTest.H"
 #include "aw_test_utils/iter_tools.H"
-#include "aw_test_utils/test_utils.H"
-#include "amr-wind/utilities/trig_ops.H"
 #include "amr-wind/core/field_ops.H"
 #include "amr-wind/equation_systems/vof/volume_fractions.H"
 #include "amr-wind/equation_systems/vof/vof_hybridsolver_ops.H"
-#include "amr-wind/equation_systems/vof/vof.H"
-#include "amr-wind/equation_systems/SchemeTraits.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
 
 using namespace amrex::literals;
 

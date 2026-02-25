@@ -1,8 +1,10 @@
 #include "amr-wind/equation_systems/icns/icns.H"
-#include "amr-wind/equation_systems/icns/icns_ops.H"
-#include "amr-wind/equation_systems/icns/icns_advection.H"
-#include "amr-wind/equation_systems/icns/icns_diffusion.H"
-#include "amr-wind/equation_systems/icns/icns_bcop.H"
+
+#include <AMReX_MFParallelFor.H>
+
+#include "amr-wind/convection/Godunov.H"
+#include "amr-wind/equation_systems/PDE.H"
+#include "amr-wind/equation_systems/SchemeTraits.H"
 
 namespace amr_wind::pde {
 

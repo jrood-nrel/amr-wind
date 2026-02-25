@@ -1,8 +1,16 @@
 #ifndef UDF_H
 #define UDF_H
 
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/core/Factory.H"
 #include "AMReX_Gpu.H"
+
+namespace amrex {
+class Geometry;
+} // namespace amrex
 
 namespace amr_wind {
 class Field;

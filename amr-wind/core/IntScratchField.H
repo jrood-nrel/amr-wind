@@ -1,6 +1,7 @@
 #ifndef INTSCRATCHFIELD_H
 #define INTSCRATCHFIELD_H
 
+#include <AMReX_IntVect.H>
 #include <string>
 #include <utility>
 

@@ -1,9 +1,25 @@
 #ifndef VELOCITYFREEATMOSPHEREFORCING_H
 #define VELOCITYFREEATMOSPHEREFORCING_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/equation_systems/icns/MomentumSource.H"
 #include "amr-wind/core/SimTime.H"
 #include "amr-wind/CFDSim.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 namespace amr_wind::pde::icns {
 

@@ -1,6 +1,12 @@
+#include <gtest/gtest.h>
+#include <AMReX_ParmParse.H>
+#include <string>
+#include <string_view>
+
 #include "aw_test_utils/MeshTest.H"
 #include "amr-wind/equation_systems/icns/icns_advection.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
 
 using namespace amrex::literals;
 

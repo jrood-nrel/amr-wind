@@ -1,7 +1,11 @@
-#include "aw_test_utils/AmrexTest.H"
+#include <gtest/gtest.h>
+#include <string>
+
 #include "amr-wind/wind_energy/actuator/FLLC.H"
-#include "amr-wind/wind_energy/actuator/FLLCOp.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Slice.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/wind_energy/actuator/actuator_types.H"
 
 using namespace amrex::literals;
 

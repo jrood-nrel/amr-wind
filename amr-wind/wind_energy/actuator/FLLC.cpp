@@ -1,6 +1,16 @@
 #include "amr-wind/wind_energy/actuator/FLLC.H"
+
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_BLassert.H>
+#include <cmath>
+#include <limits>
+
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
 
 using namespace amrex::literals;
 

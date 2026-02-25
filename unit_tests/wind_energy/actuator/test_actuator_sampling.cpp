@@ -1,12 +1,30 @@
+#include <gtest/gtest.h>
+#include <AMReX_Geometry.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Particle.H>
+#include <AMReX_ParticleContainerI.H>
+#include <AMReX_Vector.H>
+#include <limits>
+#include <map>
+#include <string>
+#include <string_view>
+#include <utility>
+
 #include "aw_test_utils/MeshTest.H"
 #include "test_act_utils.H"
-
 #include "amr-wind/wind_energy/actuator/ActuatorContainer.H"
-#include "amr-wind/core/gpu_utils.H"
-#include "amr-wind/core/vs/vector_space.H"
-
-#include <algorithm>
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "aw_test_utils/AmrTestMesh.H"
+
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

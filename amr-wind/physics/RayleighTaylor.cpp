@@ -1,9 +1,15 @@
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
 #include <memory>
 
 #include "amr-wind/physics/RayleighTaylor.H"
 #include "amr-wind/physics/RayleighTaylorFieldInit.H"
 #include "amr-wind/CFDSim.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
 
 using namespace amrex::literals;
 

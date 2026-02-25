@@ -1,5 +1,16 @@
+#include <AMReX_BLProfiler.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_LO_BCTYPES.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MLLinOp.H>
+#include <AMReX_Orientation.H>
+#include <hydro_utils.H>
 #include <memory>
-#include "AMReX.H"
+#include <cmath>
+#include <utility>
+
 #include "amr-wind/equation_systems/icns/icns_advection.H"
 #include "amr-wind/core/MLMGOptions.H"
 #include "amr-wind/utilities/console_io.H"
@@ -9,6 +20,16 @@
 #include "AMReX_MultiFabUtil.H"
 #include "hydro_MacProjector.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/Physics.H"
+#include "amr-wind/incflo_enums.H"
+#include "amr-wind/ocean_waves/boundary_ops/OceanWavesBoundary.H"
+#include "amr-wind/wind_energy/ABLBoundaryPlane.H"
+#include "amr-wind/wind_energy/ABLModulatedPowerLaw.H"
+
+namespace amrex {
+class iMultiFab;
+} // namespace amrex
 
 using namespace amrex::literals;
 

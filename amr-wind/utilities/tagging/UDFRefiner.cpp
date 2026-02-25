@@ -1,6 +1,19 @@
 #include "amr-wind/utilities/tagging/UDFRefiner.H"
+
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Parser.H>
+#include <AMReX_Vector.H>
+#include <string_view>
+
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
 
 using namespace amrex::literals;
 

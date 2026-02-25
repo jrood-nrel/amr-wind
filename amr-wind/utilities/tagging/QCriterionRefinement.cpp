@@ -1,8 +1,27 @@
 #include "amr-wind/utilities/tagging/QCriterionRefinement.H"
+
+#include <stdlib.h>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_TagBox.H>
+#include <cmath>
+#include <limits>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/CFDSim.H"
 #include "AMReX.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
 
 using namespace amrex::literals;
 

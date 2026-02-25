@@ -1,5 +1,22 @@
 #include "amr-wind/boundary_conditions/MassInflowOutflowBC.H"
 
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuControl.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Orientation.H>
+#include <string>
+
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+
 namespace amr_wind {
 
 MassInflowOutflowBC::MassInflowOutflowBC(Field& field, amrex::Orientation ori)

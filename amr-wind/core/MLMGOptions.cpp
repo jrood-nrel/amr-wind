@@ -1,5 +1,13 @@
 #include "amr-wind/core/MLMGOptions.H"
 
+#include <AMReX.H>
+#include <AMReX_MLLinOp.H>
+#include <AMReX_MLMG.H>
+#include <AMReX_MLNodeLaplacian.H>
+#include <AMReX_MLNodeLinOp.H>
+#include <AMReX_ParmParse.H>
+#include <string_view>
+
 #include "hydro_MacProjector.H"
 #include "hydro_NodalProjector.H"
 

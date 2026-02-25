@@ -1,5 +1,21 @@
 #include "amr-wind/boundary_conditions/scalar_bcs.H"
 
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayCommI.H>
+#include <AMReX_FillPatchUtil_I.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_Loop.H>
+
+namespace amr_wind {
+class Field;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
+
 namespace amr_wind::scalar_bc {
 void register_scalar_dirichlet(
     Field& field,

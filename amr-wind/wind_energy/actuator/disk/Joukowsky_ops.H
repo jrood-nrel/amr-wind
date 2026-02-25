@@ -1,13 +1,45 @@
 #ifndef JOUKOWSKY_OPS_H
 #define JOUKOWSKY_OPS_H
 
+#include <AMReX_Algorithm.H>
+#include <AMReX_Extension.H>
 #include <algorithm>
+#include <cmath>
+#include <numbers>
+#include <string>
 
 #include "amr-wind/wind_energy/actuator/disk/Joukowsky.H"
 #include "amr-wind/wind_energy/actuator/disk/disk_ops.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "amr-wind/utilities/trig_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/Slice.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/core/vs/vstraits.H"
+#include "amr-wind/helics.H"
+#include "amr-wind/wind_energy/actuator/ActParser.H"
+#include "amr-wind/wind_energy/actuator/actuator_types.H"
+#include "amr-wind/wind_energy/actuator/actuator_utils.H"
+
+namespace amr_wind {
+namespace actuator {
+namespace ops {
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ComputeForceOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct InitDataOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ProcessOutputsOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ReadInputsOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct UpdatePosOp;
+} // namespace ops
+} // namespace actuator
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

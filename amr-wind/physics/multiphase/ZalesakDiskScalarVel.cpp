@@ -1,12 +1,47 @@
+#include <__ostream/basic_ostream.h>
+#include <_stdlib.h>
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParReduce.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_Tuple.H>
+#include <AMReX_TypeList.H>
+#include <AMReX_iMultiFab.H>
 #include <numbers>
+#include <cmath>
+#include <fstream>
+#include <iomanip>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/physics/multiphase/MultiPhase.H"
 #include "amr-wind/physics/multiphase/ZalesakDiskScalarVel.H"
 #include "amr-wind/CFDSim.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_MultiFabUtil.H"
-#include "amr-wind/fvm/gradient.H"
-#include "amr-wind/core/field_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/SimTime.H"
+
+namespace amrex {
+struct ReduceOpSum;
+} // namespace amrex
 
 using namespace amrex::literals;
 

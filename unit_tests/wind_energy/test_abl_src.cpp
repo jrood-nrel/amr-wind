@@ -1,11 +1,32 @@
+#include <gtest/gtest.h>
+#include <stdlib.h>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
 #include <numbers>
+#include <cmath>
+#include <limits>
+#include <string>
+#include <string_view>
+
 #include "abl_test_utils.H"
 #include "amr-wind/utilities/trig_ops.H"
 #include "aw_test_utils/iter_tools.H"
 #include "aw_test_utils/test_utils.H"
 #include "amr-wind/equation_systems/icns/icns.H"
 #include "amr-wind/equation_systems/icns/icns_ops.H"
-#include "amr-wind/equation_systems/icns/MomentumSource.H"
 #include "amr-wind/equation_systems/icns/source_terms/BodyForce.H"
 #include "amr-wind/equation_systems/icns/source_terms/ABLForcing.H"
 #include "amr-wind/equation_systems/icns/source_terms/GeostrophicForcing.H"
@@ -15,9 +36,16 @@
 #include "amr-wind/equation_systems/icns/source_terms/HurricaneForcing.H"
 #include "amr-wind/equation_systems/icns/source_terms/RayleighDamping.H"
 #include "amr-wind/equation_systems/temperature/source_terms/HurricaneTempForcing.H"
-#include "AMReX_Gpu.H"
 #include "AMReX_Random.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/equation_systems/PDEFields.H"
+#include "amr-wind/equation_systems/SchemeTraits.H"
 
 using namespace amrex::literals;
 

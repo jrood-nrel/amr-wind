@@ -1,15 +1,31 @@
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Print.H>
 #include <memory>
+#include <cmath>
+#include <numbers>
+#include <string_view>
+#include <utility>
 
 #include "amr-wind/physics/SyntheticTurbulence.H"
 #include "amr-wind/CFDSim.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
-#include "amr-wind/utilities/trig_ops.H"
-#include "amr-wind/utilities/tensor_ops.H"
-
-#include "AMReX_iMultiFab.H"
-#include "AMReX_MultiFabUtil.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/core/vs/vectorI.H"
 
 using namespace amrex::literals;
 

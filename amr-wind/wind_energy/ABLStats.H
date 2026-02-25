@@ -1,6 +1,9 @@
 #ifndef ABLISTATS_H
 #define ABLISTATS_H
 
+#include <stddef.h>
+#include <string>
+
 #include "amr-wind/wind_energy/ABLStatsBase.H"
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/transport_models/TransportModel.H"
@@ -13,6 +16,13 @@
 #include "amr-wind/utilities/sampling/SamplingContainer.H"
 #include "amr-wind/wind_energy/ABLWallFunction.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class ABLWallFunction;
+class CFDSim;
+class Field;
+class ScratchField;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

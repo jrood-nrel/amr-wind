@@ -1,5 +1,9 @@
-#include <AMReX_Gpu.H>
-#include "aw_test_utils/AmrexTest.H"
+#include <gtest/gtest.h>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuMemory.H>
+#include <AMReX_GpuQualifiers.H>
+#include <string>
+
 #include "amr-wind/utilities/integrals.H"
 #include "amr-wind/utilities/constants.H"
 #include "AMReX_REAL.H"

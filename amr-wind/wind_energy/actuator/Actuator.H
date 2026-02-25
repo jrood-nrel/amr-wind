@@ -1,6 +1,10 @@
 #ifndef ACTUATOR_H
 #define ACTUATOR_H
 
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/wind_energy/actuator/ActuatorModel.H"
 
@@ -12,6 +16,7 @@
 namespace amr_wind {
 
 class Field;
+class CFDSim;
 
 namespace actuator {
 

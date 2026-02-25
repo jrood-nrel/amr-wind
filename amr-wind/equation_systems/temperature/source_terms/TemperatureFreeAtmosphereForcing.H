@@ -1,10 +1,24 @@
 #ifndef TEMPERATUREFREEATMOSPHEREFORCING_H
 #define TEMPERATUREFREEATMOSPHEREFORCING_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/equation_systems/temperature/TemperatureSource.H"
 #include "amr-wind/core/SimTime.H"
 #include "amr-wind/CFDSim.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

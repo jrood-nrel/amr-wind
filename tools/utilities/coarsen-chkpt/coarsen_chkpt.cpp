@@ -1,3 +1,13 @@
+#include <AMReX.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <AMReX_ccse-mpi.H>
+#include <functional>
+#include <iostream>
+#include <string>
+#include <string_view>
+
 #include "CoarsenCheckpt.H"
 #include "amr-wind/utilities/console_io.H"
 

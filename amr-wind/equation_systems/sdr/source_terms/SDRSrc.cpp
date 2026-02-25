@@ -1,9 +1,15 @@
-#include <AMReX_Orientation.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParmParse.H>
 
 #include "amr-wind/equation_systems/sdr/source_terms/SDRSrc.H"
 #include "amr-wind/CFDSim.H"
-#include "amr-wind/turbulence/TurbulenceModel.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
 
 using namespace amrex::literals;
 

@@ -1,11 +1,9 @@
 #include "amr-wind/core/IntScratchField.H"
-#include "amr-wind/core/FieldRepo.H"
 
-#include "AMReX_Gpu.H"
+#include <AMReX_BLProfiler.H>
+
+#include "amr-wind/core/FieldRepo.H"
 #include "AMReX_IArrayBox.H"
-#include "AMReX_Geometry.H"
-#include "AMReX_PhysBCFunct.H"
-#include "AMReX_FillPatchUtil.H"
 #include "AMReX_iMultiFab.H"
 
 namespace amr_wind {

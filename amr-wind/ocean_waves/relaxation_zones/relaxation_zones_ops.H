@@ -1,14 +1,37 @@
 #ifndef RELAX_ZONES_OPS_H
 #define RELAX_ZONES_OPS_H
 
+#include <AMReX_BLProfiler.H>
+#include <AMReX_REAL.H>
+#include <string>
+#include <type_traits>
+
 #include "amr-wind/ocean_waves/relaxation_zones/RelaxationZones.H"
 #include "amr-wind/ocean_waves/OceanWavesTypes.H"
 #include "amr-wind/ocean_waves/OceanWavesOps.H"
 #include "amr-wind/ocean_waves/utils/wave_utils_K.H"
 #include "amr-wind/core/MultiParser.H"
 #include "amr-wind/fvm/gradient.H"
-
 #include "AMReX_MultiFabUtil.H"
+
+namespace amr_wind {
+class CFDSim;
+namespace ocean_waves {
+namespace ops {
+template <typename WaveTheoryTrait, typename = void>
+struct ApplyRelaxZonesOp;
+template <typename WaveTheoryTrait, typename = void>
+struct ProcessOutputsOp;
+template <typename WaveTheoryTrait, typename = void>
+struct UpdateTargetFieldsOp;
+template <typename WaveTheoryTrait, typename = void>
+struct UpdateTargetFieldsSecondaryOp;
+} // namespace ops
+struct OceanWavesInfo;
+struct RelaxZonesBaseData;
+struct RelaxZonesType;
+} // namespace ocean_waves
+} // namespace amr_wind
 
 namespace amr_wind::ocean_waves {
 namespace relaxation_zones {

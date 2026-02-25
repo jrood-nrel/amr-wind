@@ -1,12 +1,15 @@
 #ifndef BCINTERFACE_H
 #define BCINTERFACE_H
 
+#include <AMReX_Array.H>
+#include <AMReX_BCRec.H>
+#include <AMReX_Vector.H>
+#include <utility>
+#include <string>
+
 #include "amr-wind/core/Field.H"
 #include "amr-wind/incflo_enums.H"
-
 #include "AMReX_BC_TYPES.H"
-
-#include <utility>
 #include "AMReX_REAL.H"
 
 using namespace amrex::literals;

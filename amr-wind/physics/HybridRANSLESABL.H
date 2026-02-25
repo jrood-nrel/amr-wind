@@ -1,10 +1,17 @@
 #ifndef HYBRIDRANSLESABL_H
 #define HYBRIDRANSLESABL_H
 
+#include <string>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/Field.H"
 #include "amr-wind/CFDSim.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

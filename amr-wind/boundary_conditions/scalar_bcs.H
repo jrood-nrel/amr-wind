@@ -1,11 +1,25 @@
 #ifndef SCALAR_BCS_H
 #define SCALAR_BCS_H
 
+#include <AMReX.H>
+#include <AMReX_Array.H>
+#include <string>
+
 #include "amr-wind/core/FieldBCOps.H"
 #include "amr-wind/core/FieldFillPatchOps.H"
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/core/SimTime.H"
 #include "amr-wind/physics/udfs/CustomScalar.H"
+
+namespace amr_wind {
+class Field;
+class SimTime;
+template <typename BCOpCreator>
+class FieldFillPatchOps;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 namespace amr_wind::scalar_bc {
 

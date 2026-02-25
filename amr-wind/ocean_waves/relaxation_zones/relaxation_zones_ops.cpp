@@ -1,13 +1,44 @@
 #include "amr-wind/ocean_waves/relaxation_zones/relaxation_zones_ops.H"
+
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Vector.H>
+#include <AMReX_iMultiFab.H>
+#include <cmath>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/physics/multiphase/MultiPhase.H"
 #include "amr-wind/equation_systems/vof/volume_fractions.H"
 #include "amr-wind/core/MultiParser.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
-#include "amr-wind/utilities/io_utils.H"
-#include "amr-wind/fvm/gradient.H"
-#include "amr-wind/core/field_ops.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/Physics.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/ocean_waves/relaxation_zones/RelaxationZones.H"
+#include "amr-wind/ocean_waves/utils/wave_utils_K.H"
+#include "amr-wind/utilities/constants.H"
+
+namespace amr_wind {
+namespace ocean_waves {
+struct OceanWavesInfo;
+} // namespace ocean_waves
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

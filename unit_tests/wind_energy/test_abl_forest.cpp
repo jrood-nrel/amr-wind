@@ -1,10 +1,25 @@
+#include <__ostream/basic_ostream.h>
+#include <gtest/gtest.h>
+#include <AMReX_AmrCore.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_Loop.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <algorithm>
+#include <fstream>
+#include <string>
+#include <string_view>
+
 #include "aw_test_utils/MeshTest.H"
-#include "aw_test_utils/iter_tools.H"
-#include "aw_test_utils/test_utils.H"
 #include "amr-wind/physics/ForestDrag.H"
 #include "amr-wind/core/field_ops.H"
 #include "amr-wind/utilities/sampling/FieldNorms.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/utilities/constants.H"
 
 using namespace amrex::literals;
 

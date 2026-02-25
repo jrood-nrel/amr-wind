@@ -1,9 +1,11 @@
 #include "amr-wind/wind_energy/actuator/wing/wing_ops.H"
-#include "amr-wind/wind_energy/actuator/ActParser.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
-#include "amr-wind/utilities/io_utils.H"
-#include "AMReX_ParmParse.H"
+
+#include <AMReX.H>
+#include <AMReX_String.H>
+#include <limits>
+
 #include "AMReX_REAL.H"
+#include "amr-wind/wind_energy/actuator/wing/ActuatorWing.H"
 
 using namespace amrex::literals;
 

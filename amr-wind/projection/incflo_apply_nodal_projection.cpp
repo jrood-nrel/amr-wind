@@ -1,5 +1,40 @@
-#include "AMReX_BC_TYPES.H"
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BCRec.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_DistributionMapping.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_LO_BCTYPES.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MLNodeLaplacian.H>
+#include <AMReX_MakeType.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_MultiFabUtil.H>
+#include <AMReX_MultiFabUtil_3D_C.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <AMReX_iMultiFab.H>
+#include <hydro_NodalProjector.H>
 #include <memory>
+#include <array>
+#include <cmath>
+#include <string>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/incflo.H"
 #include "amr-wind/core/MLMGOptions.H"
 #include "amr-wind/utilities/console_io.H"
@@ -7,6 +42,22 @@
 #include "amr-wind/projection/nodal_projection_ops.H"
 #include "hydro_utils.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/Physics.H"
+#include "amr-wind/core/ScratchField.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/equation_systems/PDEFields.H"
+#include "amr-wind/incflo_enums.H"
+#include "amr-wind/ocean_waves/OceanWaves.H"
+#include "amr-wind/ocean_waves/boundary_ops/OceanWavesBoundary.H"
+#include "amr-wind/wind_energy/ABL.H"
+#include "amr-wind/wind_energy/ABLBoundaryPlane.H"
+#include "amr-wind/wind_energy/ABLModulatedPowerLaw.H"
 
 using namespace amrex::literals;
 

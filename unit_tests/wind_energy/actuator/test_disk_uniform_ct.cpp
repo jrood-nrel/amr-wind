@@ -1,9 +1,22 @@
-#include "aw_test_utils/AmrexTest.H"
-#include "test_act_utils.H"
+#include <gtest/gtest.h>
+#include <AMReX_ParmParse.H>
+#include <cmath>
+#include <limits>
+#include <string>
+#include <string_view>
+#include <utility>
+#include <vector>
 
+#include "aw_test_utils/AmrexTest.H"
 #include "amr-wind/wind_energy/actuator/disk/uniform_ct_ops.H"
 #include "AMReX_Exception.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/wind_energy/actuator/ActParser.H"
+#include "amr-wind/wind_energy/actuator/actuator_types.H"
+#include "amr-wind/wind_energy/actuator/disk/UniformCt.H"
+#include "amr-wind/wind_energy/actuator/disk/disk_ops.H"
 
 using namespace amrex::literals;
 

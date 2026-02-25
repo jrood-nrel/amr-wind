@@ -1,9 +1,18 @@
 #include "amr-wind/equation_systems/icns/source_terms/GravityForcing.H"
+
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MultiFab.H>
+#include <string_view>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/core/FieldUtils.H"
-
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
 
 using namespace amrex::literals;
 

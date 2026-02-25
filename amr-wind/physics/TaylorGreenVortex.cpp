@@ -1,8 +1,23 @@
 #include "amr-wind/physics/TaylorGreenVortex.H"
+
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <cmath>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/CFDSim.H"
 #include "AMReX_ParmParse.H"
 #include "amr-wind/utilities/trig_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
 
 using namespace amrex::literals;
 

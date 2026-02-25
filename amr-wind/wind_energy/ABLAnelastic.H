@@ -1,5 +1,7 @@
 #ifndef ABLANELASTIC_H
 #define ABLANELASTIC_H
+#include <AMReX_Vector.H>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/transport_models/TransportModel.H"
 #include "amr-wind/utilities/constants.H"
@@ -7,6 +9,11 @@
 #include "amr-wind/eos_models/EOSModel.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/FieldDescTypes.H"
+
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

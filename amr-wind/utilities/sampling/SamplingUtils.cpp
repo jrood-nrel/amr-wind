@@ -1,8 +1,14 @@
+#include <stdlib.h>
 #include <algorithm>
+#include <cmath>
+#include <limits>
+#include <numbers>
+#include <stdexcept>
 
 #include "SamplingUtils.H"
-#include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/core/vs/vectorI.H"
 
 using namespace amrex::literals;
 

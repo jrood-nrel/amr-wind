@@ -2,12 +2,15 @@
 #define RAYLEIGHTAYLOR_H
 
 #include <memory>
+#include <string>
 
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/physics/RayleighTaylorFieldInit.H"
 #include "amr-wind/core/Field.H"
 
 namespace amr_wind {
+class CFDSim;
+class Field;
 
 /** Rayleigh Taylor physics
  *  \ingroup physics

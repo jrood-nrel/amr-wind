@@ -1,11 +1,39 @@
 #include "amr-wind/physics/BurggrafFlow.H"
+
+#include <__ostream/basic_ostream.h>
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_Tuple.H>
+#include <AMReX_TypeList.H>
+#include <cmath>
+#include <fstream>
+#include <iomanip>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/CFDSim.H"
 #include "AMReX_iMultiFab.H"
 #include "AMReX_MultiFabUtil.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_ParReduce.H"
-#include "amr-wind/utilities/trig_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
+
+namespace amrex {
+struct ReduceOpSum;
+} // namespace amrex
 
 using namespace amrex::literals;
 

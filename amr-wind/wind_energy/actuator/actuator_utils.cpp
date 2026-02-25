@@ -1,7 +1,20 @@
+#include <AMReX_AmrCore.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_DistributionMapping.H>
+#include <AMReX_ParallelDescriptor.H>
 #include <algorithm>
+#include <iterator>
+#include <utility>
+#include <vector>
 
 #include "amr-wind/wind_energy/actuator/actuator_utils.H"
 #include "amr-wind/wind_energy/actuator/actuator_types.H"
+#include "amr-wind/utilities/index_operations.H"
+
+namespace amrex {
+class RealBox;
+} // namespace amrex
 
 namespace amr_wind::actuator::utils {
 

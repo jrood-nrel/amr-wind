@@ -9,6 +9,10 @@
 #include "AMReX_Vector.H"
 #include "AMReX_Gpu.H"
 
+namespace amrex {
+class Geometry;
+} // namespace amrex
+
 using namespace amrex::literals;
 
 namespace amr_wind {

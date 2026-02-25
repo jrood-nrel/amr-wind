@@ -1,7 +1,14 @@
 #include "amr-wind/physics/Intermittency.H"
+
+#include <AMReX_FArrayBox.H>
+#include <AMReX_MultiFab.H>
+#include <string_view>
+
 #include "amr-wind/CFDSim.H"
 #include "AMReX_ParmParse.H"
-#include "amr-wind/utilities/trig_ops.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/equation_systems/PDEBase.H"
 
 namespace amr_wind {
 

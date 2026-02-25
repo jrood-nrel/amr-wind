@@ -1,9 +1,13 @@
 #ifndef FIXEDWING_H
 #define FIXEDWING_H
 
+#include <memory>
+#include <string>
+
 #include "amr-wind/wind_energy/actuator/wing/ActuatorWing.H"
 #include "amr-wind/wind_energy/actuator/aero/AirfoilTable.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/wind_energy/actuator/actuator_types.H"
 
 using namespace amrex::literals;
 

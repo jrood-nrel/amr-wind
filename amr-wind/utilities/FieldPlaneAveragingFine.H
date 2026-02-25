@@ -1,10 +1,18 @@
 #ifndef FIELDPLANEAVERAGINGFINE_H
 #define FIELDPLANEAVERAGINGFINE_H
 
+#include <AMReX_Box.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuReduce.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/utilities/DirectionSelector.H"
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/core/Field.H"
 #include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/ScratchField.H"
 
 /**
  *  \defgroup statistics Field statistics
@@ -17,6 +25,8 @@
  */
 
 namespace amr_wind {
+class CFDSim;
+class SimTime;
 
 /** Output average of a field on planes normal to a given direction
  *  \ingroup statistics we_abl

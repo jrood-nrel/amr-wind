@@ -3,6 +3,7 @@
 
 #include "aw_test_utils/MeshTest.H"
 #include "aw_test_utils/pp_utils.H"
+#include "aw_test_utils/AmrexTest.H"
 
 namespace amr_wind_tests {
 

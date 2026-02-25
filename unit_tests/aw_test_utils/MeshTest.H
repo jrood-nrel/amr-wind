@@ -1,6 +1,8 @@
 #ifndef MESHTEST_H
 #define MESHTEST_H
 
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
 #include <memory>
 
 #include "aw_test_utils/AmrexTest.H"
@@ -8,6 +10,12 @@
 #include "amr-wind/core/SimTime.H"
 #include "amr-wind/utilities/constants.H"
 #include "amr-wind/utilities/tagging/CartBoxRefinement.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/utilities/tagging/RefinementCriteria.H"
+
+namespace amr_wind {
+class SimTime;
+} // namespace amr_wind
 
 namespace amr_wind_tests {
 

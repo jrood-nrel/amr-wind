@@ -1,4 +1,10 @@
 #include "abloffshore_test_utils.H"
+
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <string>
+#include <string_view>
+
 #include "aw_test_utils/MeshTest.H"
 #include "AMReX_REAL.H"
 

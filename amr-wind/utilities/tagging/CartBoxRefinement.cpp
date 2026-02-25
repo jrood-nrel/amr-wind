@@ -1,5 +1,18 @@
-#include <iostream>
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxList.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_Print.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_TagBox.H>
+#include <AMReX_Vector.H>
 #include <fstream>
+#include <cmath>
+#include <limits>
+#include <string_view>
+#include <utility>
 
 #include "amr-wind/utilities/tagging/CartBoxRefinement.H"
 #include "amr-wind/CFDSim.H"

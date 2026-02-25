@@ -1,8 +1,19 @@
+#include <__ostream/basic_ostream.h>
+#include <gtest/gtest.h>
+#include <AMReX_AmrCore.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <fstream>
+#include <string>
+#include <string_view>
+
 #include "aw_test_utils/MeshTest.H"
-#include "aw_test_utils/iter_tools.H"
 #include "aw_test_utils/test_utils.H"
 #include "amr-wind/physics/TerrainDrag.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/equation_systems/PDEBase.H"
 
 using namespace amrex::literals;
 

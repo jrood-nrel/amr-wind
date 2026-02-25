@@ -1,13 +1,23 @@
 #ifndef WALLFUNCTION_H
 #define WALLFUNCTION_H
 
+#include <AMReX_REAL.H>
+#include <string>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/core/FieldBCOps.H"
 #include "amr-wind/utilities/FieldPlaneAveragingFine.H"
 #include "amr-wind/boundary_conditions/wall_models/LogLaw.H"
 #include "amr-wind/boundary_conditions/wall_models/MOSD.H"
 
+namespace amrex {
+class AmrCore;
+} // namespace amrex
+
 namespace amr_wind {
+class CFDSim;
+class Field;
+enum class FieldState : std::uint8_t;
 
 /** Wall-function computations for LES simulations
  *  \ingroup utilities

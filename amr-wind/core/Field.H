@@ -1,18 +1,27 @@
 #ifndef FIELD_H
 #define FIELD_H
 
+#include <AMReX_Array.H>
+#include <AMReX_BC_TYPES.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
 #include <string>
 #include <memory>
 #include <unordered_map>
 #include <algorithm>
+#include <utility>
 
 #include "AMReX_MultiFab.H"
 #include "AMReX_BCRec.H"
 #include "AMReX_Gpu.H"
-
 #include "amr-wind/incflo_enums.H"
 #include "amr-wind/core/FieldDescTypes.H"
 #include "amr-wind/core/ViewField.H"
+
+enum struct BC : std::uint8_t;
 
 namespace amr_wind {
 
@@ -21,6 +30,7 @@ class FieldRepo;
 class FieldFillPatchOpsBase;
 class FieldBCIface;
 class SimTime;
+enum class FieldLoc : std::uint8_t;
 
 /** Information common to a field that has multiple states
  *  \ingroup fields

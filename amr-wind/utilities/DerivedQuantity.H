@@ -1,15 +1,20 @@
 #ifndef DERIVEDQUANTITY_H
 #define DERIVEDQUANTITY_H
 
+#include <AMReX_Vector.H>
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <memory>
+#include <set>
 
 #include "amr-wind/core/Factory.H"
 #include "amr-wind/core/CollMgr.H"
 #include "amr-wind/CFDSim.H"
 
 namespace amr_wind {
+class FieldRepo;
+class ScratchField;
 
 class DerivedQty
     : public Factory<DerivedQty, const FieldRepo&, std::vector<std::string>&>

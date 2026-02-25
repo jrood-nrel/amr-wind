@@ -1,9 +1,17 @@
 #include "amr-wind/equation_systems/icns/source_terms/ForestForcing.H"
-#include "amr-wind/utilities/IOManager.H"
 
-#include "AMReX_Gpu.H"
-#include "AMReX_Random.H"
-#include "amr-wind/wind_energy/ABL.H"
+#include <AMReX.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParmParse.H>
+#include <cmath>
+
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/FieldUtils.H"
 
 namespace amr_wind::pde::icns {
 

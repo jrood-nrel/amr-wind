@@ -1,7 +1,17 @@
 #ifndef SDRSRC_H
 #define SDRSRC_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_REAL.H>
+#include <string>
+
 #include "amr-wind/equation_systems/sdr/SDRSource.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+} // namespace amr_wind
 
 namespace amr_wind::pde::tke {
 

@@ -1,6 +1,10 @@
 #ifndef REFINECHECKPT_H
 #define REFINECHECKPT_H
 
+#include <AMReX_BoxArray.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+
 #include "amr-wind/incflo.H"
 
 namespace amr_wind {

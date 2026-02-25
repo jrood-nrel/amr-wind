@@ -1,16 +1,15 @@
 #ifndef TIMEAVERAGING_H
 #define TIMEAVERAGING_H
 
-#include "amr-wind/core/Factory.H"
-#include "amr-wind/utilities/PostProcessing.H"
-#include "amr-wind/utilities/constants.H"
-
-#include "AMReX_Vector.H"
-
 #include <limits>
 #include <memory>
 #include <string>
 #include <map>
+
+#include "amr-wind/core/Factory.H"
+#include "amr-wind/utilities/PostProcessing.H"
+#include "amr-wind/utilities/constants.H"
+#include "AMReX_Vector.H"
 #include "AMReX_REAL.H"
 
 using namespace amrex::literals;

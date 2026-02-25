@@ -1,8 +1,20 @@
+#include <AMReX_BC_TYPES.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_Vector.H>
 #include <utility>
+#include <algorithm>
 
 #include "amr-wind/wind_energy/ABLFillInflow.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/incflo_enums.H"
+#include "amr-wind/wind_energy/ABLBoundaryPlane.H"
+
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 namespace amr_wind {
+class SimTime;
 
 ABLFillInflow::ABLFillInflow(
     Field& field,

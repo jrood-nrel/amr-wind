@@ -3,10 +3,15 @@
 
 #include <string>
 #include <cstdint>
+#include <utility>
+#include <vector>
+
 #include "amr-wind/core/vs/vector_space.H"
 #include "amr-wind/utilities/tensor_ops.H"
 #include "AMReX_Vector.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/tensor.H"
+#include "amr-wind/core/vs/vector.H"
 
 using namespace amrex::literals;
 

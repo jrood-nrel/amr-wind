@@ -1,6 +1,7 @@
 #ifndef AMRTESTMESH_H
 #define AMRTESTMESH_H
 
+#include <AMReX_REAL.H>
 #include <memory>
 #include <unordered_map>
 
@@ -8,6 +9,10 @@
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/core/Field.H"
+
+namespace amr_wind {
+class FieldRepo;
+} // namespace amr_wind
 
 namespace amr_wind_tests {
 

@@ -1,11 +1,16 @@
 #ifndef BOUSSINESQBUBBLE_H
 #define BOUSSINESQBUBBLE_H
 
+#include <memory>
+#include <string>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/physics/BoussinesqBubbleFieldInit.H"
 #include "amr-wind/core/Field.H"
 
 namespace amr_wind {
+class CFDSim;
+class Field;
 
 /** Boussinesq Bubble physics
  *  \ingroup physics

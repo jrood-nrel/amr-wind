@@ -1,7 +1,34 @@
+#include <__ostream/basic_ostream.h>
+#include <stddef.h>
+#include <AMReX.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuAsyncArray.H>
+#include <AMReX_GpuKernelInfo.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_GpuReduce.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
 #include <algorithm>
+#include <cmath>
+#include <fstream>
+#include <utility>
 
 #include "ThirdMomentAveraging.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/utilities/DirectionSelector.H"
+
+namespace amrex {
+namespace Gpu {
+struct Handler;
+} // namespace Gpu
+} // namespace amrex
 
 using namespace amrex::literals;
 

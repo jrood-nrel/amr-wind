@@ -1,11 +1,40 @@
+#include <__ostream/basic_ostream.h>
+#include <gtest/gtest.h>
+#include <stdlib.h>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <cmath>
+#include <limits>
+#include <memory>
+#include <sstream>
+#include <string>
+#include <string_view>
+#include <utility>
+
 #include "aw_test_utils/MeshTest.H"
 #include "aw_test_utils/iter_tools.H"
-#include "aw_test_utils/test_utils.H"
 #include "amr-wind/physics/multiphase/MultiPhase.H"
 #include "amr-wind/equation_systems/vof/vof.H"
 #include "amr-wind/equation_systems/SchemeTraits.H"
 #include "amr-wind/utilities/tagging/CartBoxRefinement.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/Physics.H"
+#include "amr-wind/core/ScratchField.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/utilities/tagging/RefinementCriteria.H"
+#include "aw_test_utils/AmrTestMesh.H"
 
 using namespace amrex::literals;
 

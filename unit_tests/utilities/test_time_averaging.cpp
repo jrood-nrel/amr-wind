@@ -1,8 +1,18 @@
+#include <gtest/gtest.h>
+#include <AMReX_Algorithm.H>
+#include <AMReX_ParmParse.H>
+#include <limits>
+#include <string>
+#include <string_view>
+
 #include "aw_test_utils/MeshTest.H"
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/PostProcessing.H"
 #include "aw_test_utils/test_utils.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
 
 using namespace amrex::literals;
 

@@ -1,15 +1,39 @@
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Random.H>
+#include <AMReX_Vector.H>
 #include <cmath>
 #include <numbers>
 #include <string>
+#include <fstream>
+#include <limits>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/wind_energy/ABLFieldInit.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
-#include "AMReX_ParallelDescriptor.H"
 #include "amr-wind/utilities/trig_ops.H"
-#include "AMReX_Gpu.H"
 #include "AMReX_ParmParse.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "amr-wind/utilities/io_utils.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+
+namespace amrex {
+struct RandomEngine;
+} // namespace amrex
 
 using namespace amrex::literals;
 

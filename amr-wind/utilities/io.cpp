@@ -1,11 +1,31 @@
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_BoxList.H>
+#include <AMReX_DistributionMapping.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_Print.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_Vector.H>
+#include <AMReX_VisMF.H>
+#include <cmath>
+#include <sstream>
+#include <string>
+#include <string_view>
+
 #include "amr-wind/incflo.H"
-#include "amr-wind/core/Physics.H"
 #include "amr-wind/utilities/io_utils.H"
-#include "amr-wind/utilities/console_io.H"
 #include "amr-wind/utilities/IOManager.H"
 #include "AMReX_ParmParse.H"
-#include "AMReX_PlotFileUtil.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/SimTime.H"
 
 using namespace amrex::literals;
 

@@ -1,3 +1,7 @@
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_iMultiFab.H>
 #include <utility>
 
 #include "amr-wind/core/IntField.H"

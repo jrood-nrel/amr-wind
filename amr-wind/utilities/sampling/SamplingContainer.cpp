@@ -1,10 +1,25 @@
 
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_INT.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_ParticleContainerI.H>
+#include <AMReX_ParticleTile.H>
+#include <AMReX_RealVect.H>
+#include <AMReX_SPACE.H>
 #include <algorithm>
+#include <numeric>
 
 #include "amr-wind/utilities/sampling/SamplingContainer.H"
 #include "amr-wind/utilities/sampling/SamplerBase.H"
-#include "amr-wind/core/Field.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/ScratchField.H"
+#include "amr-wind/utilities/DerivedQuantity.H"
 
 using namespace amrex::literals;
 

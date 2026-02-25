@@ -5,6 +5,10 @@
 
 #include "amr-wind/core/Physics.H"
 
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
+
 namespace amr_wind_tests {
 
 class PhysicsEx : public amr_wind::Physics::Register<PhysicsEx>

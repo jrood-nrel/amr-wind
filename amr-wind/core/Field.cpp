@@ -1,12 +1,33 @@
+#include <AMReX.H>
+#include <AMReX_BCRec.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayCommI.H>
+#include <AMReX_FillPatchUtil_I.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Print.H>
+#include <AMReX_SPACE.H>
 #include <utility>
 
 #include "amr-wind/core/Field.H"
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/core/FieldFillPatchOps.H"
 #include "amr-wind/core/FieldBCOps.H"
-#include "amr-wind/core/SimTime.H"
 #include "amr-wind/boundary_conditions/BCInterface.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/incflo_enums.H"
+
+namespace amr_wind {
+enum class FieldLoc : std::uint8_t;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

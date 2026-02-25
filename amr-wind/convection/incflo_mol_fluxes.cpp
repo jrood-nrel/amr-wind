@@ -1,3 +1,16 @@
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BCRec.H>
+#include <AMReX_BC_TYPES.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_Box.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_Vector.H>
+#include <limits>
+#include <utility>
+
 #include "amr-wind/convection/MOL.H"
 #include "amr-wind/utilities/bc_ops.H"
 #include "AMReX_Geometry.H"

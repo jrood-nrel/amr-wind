@@ -1,10 +1,18 @@
 #ifndef THIRDMOMENTAVERAGING_H
 #define THIRDMOMENTAVERAGING_H
 
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "AMReX_AmrCore.H"
 #include "amr-wind/utilities/DirectionSelector.H"
 #include "amr-wind/core/Field.H"
 #include "amr-wind/utilities/FieldPlaneAveraging.H"
+
+namespace amrex {
+class MultiFab;
+} // namespace amrex
 
 namespace amr_wind {
 

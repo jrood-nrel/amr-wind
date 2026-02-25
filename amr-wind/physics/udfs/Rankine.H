@@ -1,6 +1,15 @@
 #ifndef RANKINE_H
 #define RANKINE_H
 
+#include <math.h>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_SPACE.H>
+#include <string>
+
 #include "AMReX_Geometry.H"
 #include "AMReX_Gpu.H"
 #include "AMReX_REAL.H"

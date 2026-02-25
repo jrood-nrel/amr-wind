@@ -1,7 +1,21 @@
 #include "amr-wind/utilities/DerivedQtyDefs.H"
+
+#include <stddef.h>
+#include <AMReX_BLassert.H>
+#include <AMReX_Box.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+
 #include "amr-wind/core/field_ops.H"
-#include "amr-wind/fvm/fvm.H"
 #include "amr-wind/utilities/io_utils.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/ScratchField.H"
+#include "amr-wind/core/ViewField.H"
+#include "amr-wind/fvm/divergence.H"
+#include "amr-wind/fvm/gradient.H"
+#include "amr-wind/fvm/laplacian.H"
+#include "amr-wind/fvm/qcriterion.H"
+#include "amr-wind/fvm/strainrate.H"
+#include "amr-wind/fvm/vorticity_mag.H"
 
 namespace amr_wind::derived {
 

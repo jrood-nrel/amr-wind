@@ -1,8 +1,44 @@
+#include <gtest/gtest.h>
+#include <stdlib.h>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BCRec.H>
+#include <AMReX_BC_TYPES.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayCommI.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_FillPatchUtil_I.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_SPACE.H>
+#include <AMReX_Vector.H>
+#include <cmath>
+#include <string>
+#include <string_view>
+
 #include "aw_test_utils/MeshTest.H"
 #include "amr-wind/core/FieldBCOps.H"
 #include "amr-wind/core/FieldFillPatchOps.H"
 #include "amr-wind/projection/nodal_projection_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/incflo_enums.H"
+#include "aw_test_utils/AmrTestMesh.H"
+
+namespace amrex {
+struct GeometryData;
+} // namespace amrex
 
 using namespace amrex::literals;
 

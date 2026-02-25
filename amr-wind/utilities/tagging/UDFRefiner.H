@@ -1,9 +1,19 @@
 #ifndef UDFREFINER_H
 #define UDFREFINER_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_TagBox.H>
+#include <string>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/tagging/GeometryRefinement.H"
 #include "AMReX_Parser.H"
+
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
 
 namespace amr_wind::tagging {
 

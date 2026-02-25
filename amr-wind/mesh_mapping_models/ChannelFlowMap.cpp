@@ -1,9 +1,24 @@
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_Extension.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
 #include <cmath>
+#include <string_view>
+#include <utility>
 
 #include "amr-wind/mesh_mapping_models/ChannelFlowMap.H"
-
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
 
 using namespace amrex::literals;
 

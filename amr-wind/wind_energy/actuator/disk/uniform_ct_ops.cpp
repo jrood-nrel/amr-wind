@@ -1,7 +1,12 @@
 #include "amr-wind/wind_energy/actuator/disk/uniform_ct_ops.H"
+
+#include <__ostream/basic_ostream.h>
+#include <AMReX_RealBox.H>
+#include <sstream>
+
 #include "amr-wind/wind_energy/actuator/ActParser.H"
 #include "AMReX_REAL.H"
-#include <ostream>
+#include "amr-wind/wind_energy/actuator/disk/ActuatorDisk.H"
 
 using namespace amrex::literals;
 

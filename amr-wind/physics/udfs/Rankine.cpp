@@ -1,9 +1,11 @@
 #include "amr-wind/physics/udfs/Rankine.H"
-#include "amr-wind/core/Field.H"
-#include "amr-wind/core/FieldRepo.H"
-#include "amr-wind/core/vs/vector.H"
-#include "amr-wind/equation_systems/icns/icns.H"
 
+#include <AMReX_BLassert.H>
+#include <AMReX_Vector.H>
+#include <string_view>
+
+#include "amr-wind/core/Field.H"
+#include "amr-wind/equation_systems/icns/icns.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
 

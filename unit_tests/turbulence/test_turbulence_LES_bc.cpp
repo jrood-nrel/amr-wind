@@ -1,8 +1,37 @@
+#include <stdlib.h>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <cmath>
+#include <limits>
+#include <memory>
+#include <string>
+#include <string_view>
+#include <utility>
+
 #include "gtest/gtest.h"
 #include "aw_test_utils/MeshTest.H"
 #include "amr-wind/turbulence/TurbulenceModel.H"
-#include "aw_test_utils/test_utils.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/Physics.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/incflo_enums.H"
 
 using namespace amrex::literals;
 

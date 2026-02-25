@@ -1,5 +1,11 @@
 #include "amr-wind/core/SimTime.H"
 
+#include <AMReX.H>
+#include <AMReX_Vector.H>
+#include <iomanip>
+#include <string>
+#include <string_view>
+
 #include "AMReX_ParmParse.H"
 #include "AMReX_Print.H"
 #include "AMReX_REAL.H"

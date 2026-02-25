@@ -1,13 +1,41 @@
 #include "amr-wind/equation_systems/icns/source_terms/DragForcing.H"
+
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Extension.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <AMReX_iMultiFab.H>
+#include <cmath>
+#include <numbers>
+#include <string_view>
+
 #include "amr-wind/equation_systems/vof/volume_fractions.H"
-#include "amr-wind/utilities/IOManager.H"
-#include "AMReX_Gpu.H"
-#include "AMReX_Random.H"
 #include "amr-wind/wind_energy/ABL.H"
 #include "amr-wind/physics/TerrainDrag.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "amr-wind/utilities/constants.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/FieldUtils.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/Physics.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/utilities/FieldPlaneAveraging.H"
+#include "amr-wind/wind_energy/ABLStatsBase.H"
+#include "amr-wind/wind_energy/MOData.H"
 
 using namespace amrex::literals;
 

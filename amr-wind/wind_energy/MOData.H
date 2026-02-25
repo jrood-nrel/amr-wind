@@ -1,7 +1,10 @@
 #ifndef MODATA_H
 #define MODATA_H
 
+#include <AMReX_Array.H>
 #include <cstdint>
+#include <cmath>
+
 #include "amr-wind/utilities/trig_ops.H"
 #include "AMReX_REAL.H"
 

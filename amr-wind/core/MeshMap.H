@@ -1,16 +1,22 @@
 #ifndef MESHMAP_H
 #define MESHMAP_H
 
+#include <string>
+
 #include "amr-wind/core/CollMgr.H"
 #include "amr-wind/core/Factory.H"
 #include "amr-wind/core/Field.H"
-
 #include "AMReX_MultiFab.H"
 #include "AMReX_Geometry.H"
+
+namespace amrex {
+class Geometry;
+} // namespace amrex
 
 namespace amr_wind {
 
 class CFDSim;
+class Field;
 
 /**
  *  \defgroup mesh_map Mesh mapping models

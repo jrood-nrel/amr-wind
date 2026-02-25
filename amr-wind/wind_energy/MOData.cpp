@@ -1,6 +1,10 @@
+#include <AMReX_Print.H>
 #include <limits>
+#include <cstdlib>
+
 #include "amr-wind/wind_energy/MOData.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/utilities/trig_ops.H"
 
 using namespace amrex::literals;
 

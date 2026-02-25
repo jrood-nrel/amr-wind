@@ -1,8 +1,18 @@
 #ifndef LIDARSAMPLER_H
 #define LIDARSAMPLER_H
 
+#include <stddef.h>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <limits>
+#include <string>
+
 #include "amr-wind/utilities/sampling/LineSampler.H"
 #include "amr-wind/core/vs/vector_space.H"
+
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
 
 namespace amr_wind::sampling {
 

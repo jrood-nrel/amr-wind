@@ -2,11 +2,37 @@
 #define UNIFORM_CT_OPS_H
 
 #include <numbers>
+#include <string>
+
 #include "amr-wind/wind_energy/actuator/disk/disk_ops.H"
 #include "amr-wind/wind_energy/actuator/disk/UniformCt.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "amr-wind/utilities/trig_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/helics.H"
+#include "amr-wind/wind_energy/actuator/ActParser.H"
+
+namespace amr_wind {
+namespace actuator {
+namespace ops {
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ComputeForceOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct InitDataOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ProcessOutputsOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ReadInputsOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct UpdatePosOp;
+} // namespace ops
+struct ActSrcDisk;
+} // namespace actuator
+} // namespace amr_wind
 
 using namespace amrex::literals;
 namespace amr_wind::actuator::ops {

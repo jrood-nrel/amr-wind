@@ -1,7 +1,16 @@
 #ifndef LINESAMPLER_H
 #define LINESAMPLER_H
 
+#include <AMReX_Box.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/utilities/sampling/SamplerBase.H"
+
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
 
 namespace amr_wind::sampling {
 

@@ -1,7 +1,23 @@
 #ifndef SPLITADVECTION_H
 #define SPLITADVECTION_H
 
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+
 #include "amr-wind/core/FieldRepo.H"
+
+enum struct BC : std::uint8_t;
+namespace amr_wind {
+class Field;
+class ScratchField;
+} // namespace amr_wind
+namespace amrex {
+class Geometry;
+class MultiFab;
+} // namespace amrex
 
 namespace amr_wind::multiphase {
 

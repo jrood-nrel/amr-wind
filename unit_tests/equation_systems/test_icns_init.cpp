@@ -1,9 +1,22 @@
+#include <__ostream/basic_ostream.h>
+#include <gtest/gtest.h>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <memory>
+#include <sstream>
+#include <string>
+#include <string_view>
+#include <utility>
+
 #include "aw_test_utils/MeshTest.H"
-#include "aw_test_utils/iter_tools.H"
-#include "aw_test_utils/test_utils.H"
-#include "amr-wind/physics/multiphase/MultiPhase.H"
 #include "amr-wind/utilities/tagging/CartBoxRefinement.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/utilities/tagging/RefinementCriteria.H"
+#include "aw_test_utils/AmrTestMesh.H"
 
 using namespace amrex::literals;
 

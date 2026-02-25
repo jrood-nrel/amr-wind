@@ -1,8 +1,19 @@
 #ifndef TURBINE_UTILS_H
 #define TURBINE_UTILS_H
 
+#include <AMReX_REAL.H>
+#include <string>
+
 #include "amr-wind/wind_energy/actuator/turbine/turbine_types.H"
 #include "amr-wind/wind_energy/actuator/ActParser.H"
+
+namespace amr_wind {
+namespace actuator {
+struct ActGrid;
+struct TurbineBaseData;
+struct TurbineInfo;
+} // namespace actuator
+} // namespace amr_wind
 
 namespace amr_wind::actuator::utils {
 void read_inputs(

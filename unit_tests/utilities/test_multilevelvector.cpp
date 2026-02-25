@@ -1,5 +1,9 @@
+#include <gtest/gtest.h>
+#include <string>
+
 #include "aw_test_utils/MeshTest.H"
 #include "amr-wind/utilities/MultiLevelVector.H"
+#include "aw_test_utils/AmrTestMesh.H"
 
 namespace amr_wind_tests {
 

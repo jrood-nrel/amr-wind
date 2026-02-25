@@ -1,8 +1,14 @@
 #include "amr-wind/turbulence/LaminarModel.H"
+
 #include "amr-wind/turbulence/TurbModelDefs.H"
 #include "amr-wind/core/field_ops.H"
+#include "amr-wind/core/Field.H"
+
+enum struct DiffusionType : std::uint8_t;
 
 namespace amr_wind {
+enum class FieldState : std::uint8_t;
+
 namespace turbulence {
 
 namespace {

@@ -1,10 +1,41 @@
+#include <_stdlib.h>
+#include <gtest/gtest.h>
+#include <stdlib.h>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <AMReX_iMultiFab.H>
 #include <algorithm>
+#include <cmath>
+#include <limits>
+#include <string>
+#include <string_view>
 
 #include "aw_test_utils/MeshTest.H"
 #include "aw_test_utils/iter_tools.H"
-#include "aw_test_utils/test_utils.H"
 #include "amr-wind/overset/overset_ops_routines.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/overset/overset_ops_K.H"
 
 using namespace amrex::literals;
 

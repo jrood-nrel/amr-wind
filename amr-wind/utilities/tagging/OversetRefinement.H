@@ -1,9 +1,13 @@
 #ifndef OVERSETREFINEMENT_H
 #define OVERSETREFINEMENT_H
 
+#include <AMReX_REAL.H>
+#include <string>
+
 #include "amr-wind/utilities/tagging/RefinementCriteria.H"
 
 namespace amr_wind {
+class CFDSim;
 
 class OversetRefinement : public RefinementCriteria::Register<OversetRefinement>
 {

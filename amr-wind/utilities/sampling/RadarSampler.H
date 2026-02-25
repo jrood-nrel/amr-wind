@@ -1,12 +1,25 @@
 #ifndef RADARSAMPLER_H
 #define RADARSAMPLER_H
 
+#include <stddef.h>
+#include <AMReX_Box.H>
+#include <AMReX_Vector.H>
 #include <cstdint>
+#include <numbers>
+#include <string>
+#include <vector>
+
 #include "amr-wind/utilities/sampling/SamplerBase.H"
 #include "amr-wind/utilities/sampling/SamplingUtils.H"
 #include "amr-wind/utilities/sampling/LineSampler.H"
 #include "amr-wind/core/vs/vector_space.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/tensor.H"
+#include "amr-wind/core/vs/vector.H"
+
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

@@ -6,7 +6,13 @@
  *  Boundary condition utilities
  */
 
+#include <utility>
+
 #include "AMReX_BCRec.H"
+
+namespace amrex {
+class BCRec;
+} // namespace amrex
 
 namespace amr_wind::utils {
 

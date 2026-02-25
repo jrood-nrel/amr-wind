@@ -1,9 +1,24 @@
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
 #include <numbers>
+#include <cmath>
+#include <string_view>
+#include <utility>
+
 #include "amr-wind/physics/multiphase/RainDrop.H"
 #include "amr-wind/physics/multiphase/MultiPhase.H"
 #include "amr-wind/CFDSim.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
 
 using namespace amrex::literals;
 

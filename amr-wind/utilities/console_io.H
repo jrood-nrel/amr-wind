@@ -1,9 +1,17 @@
 #ifndef CONSOLE_IO_H
 #define CONSOLE_IO_H
 
+#include <AMReX_ccse-mpi.H>
 #include <iostream>
+#include <string>
+
 #include "AMReX_MLMG.H"
 #include "amr-wind/CFDSim.H"
+
+namespace amr_wind {
+class CFDSim;
+class ScratchField;
+} // namespace amr_wind
 
 namespace amr_wind::io {
 

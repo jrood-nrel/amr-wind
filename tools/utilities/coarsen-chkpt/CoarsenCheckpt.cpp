@@ -1,7 +1,32 @@
 #include "CoarsenCheckpt.H"
+
+#include <__ostream/basic_ostream.h>
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Box.H>
+#include <AMReX_DistributionMapping.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_MultiFabUtil_3D_C.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_Print.H>
+#include <AMReX_REAL.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_VisMF.H>
+#include <algorithm>
+#include <set>
+#include <sstream>
+
 #include "AMReX_MultiFabUtil.H"
 #include "AMReX_PlotFileUtil.H"
 #include "amr-wind/utilities/IOManager.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/SimTime.H"
 
 namespace {
 void GotoNextLine(std::istream& is)

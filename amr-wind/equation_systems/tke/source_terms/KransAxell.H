@@ -1,10 +1,30 @@
 #ifndef KRANSAXELL_H
 #define KRANSAXELL_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_Vector.H>
+#include <memory>
+#include <string>
+
 #include "amr-wind/transport_models/TransportModel.H"
 #include "amr-wind/equation_systems/tke/TKESource.H"
 #include "amr-wind/utilities/constants.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+class ScratchField;
+class SimTime;
+namespace transport {
+class TransportModel;
+} // namespace transport
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

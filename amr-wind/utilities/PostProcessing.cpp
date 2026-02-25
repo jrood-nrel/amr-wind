@@ -1,10 +1,10 @@
 #include "amr-wind/utilities/PostProcessing.H"
-#include "amr-wind/CFDSim.H"
-#include "amr-wind/utilities/averaging/TimeAveraging.H"
-
-#include "AMReX_ParmParse.H"
 
 #include <set>
+
+#include "amr-wind/CFDSim.H"
+#include "AMReX_ParmParse.H"
+#include "amr-wind/core/SimTime.H"
 
 namespace amr_wind {
 

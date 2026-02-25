@@ -1,9 +1,15 @@
+#include <gtest/gtest.h>
+#include <math.h>
+#include <stddef.h>
+#include <AMReX_Vector.H>
 #include <algorithm>
 #include <numbers>
 #include <utility>
 #include <vector>
 #include <numeric>
-#include "aw_test_utils/AmrexTest.H"
+#include <limits>
+#include <string>
+
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "amr-wind/utilities/trig_ops.H"
 #include "AMReX_Random.H"

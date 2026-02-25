@@ -1,9 +1,16 @@
+#include <__ostream/basic_ostream.h>
+#include <gtest/gtest.h>
+#include <AMReX_Vector.H>
 #include <string>
 #include <numbers>
-#include "aw_test_utils/AmrexTest.H"
+#include <limits>
+#include <memory>
+#include <sstream>
+
 #include "amr-wind/wind_energy/actuator/aero/AirfoilTable.H"
 #include "amr-wind/utilities/trig_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/wind_energy/actuator/aero/AirfoilTableI.H"
 
 using namespace amrex::literals;
 

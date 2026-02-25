@@ -1,7 +1,20 @@
-#include "aw_test_utils/AmrexTest.H"
-#include "amr-wind/core/vs/vector_space.H"
+#include <gtest/gtest.h>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuMemory.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Vector.H>
+#include <cmath>
+#include <limits>
+#include <string>
+
 #include "amr-wind/utilities/trig_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/tensor.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
 
 using namespace amrex::literals;
 

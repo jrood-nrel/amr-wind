@@ -1,8 +1,20 @@
 #ifndef FREESURFACESAMPLER_H
 #define FREESURFACESAMPLER_H
 
+#include <stddef.h>
+#include <AMReX_Array.H>
+#include <AMReX_Box.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/sampling/SamplerBase.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+} // namespace amr_wind
 
 namespace amr_wind::sampling {
 

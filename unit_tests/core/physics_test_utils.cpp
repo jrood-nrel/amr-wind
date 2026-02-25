@@ -1,5 +1,9 @@
 #include "physics_test_utils.H"
 
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
+
 namespace amr_wind_tests {
 
 PhysicsEx::PhysicsEx(amr_wind::CFDSim& /*unused*/) {}

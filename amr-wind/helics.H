@@ -1,6 +1,9 @@
 #ifndef HELICS_H
 #define HELICS_H
 
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+
 #include "AMReX_AmrCore.H"
 #include "amr-wind/core/SimTime.H"
 #include "amr-wind/CFDSim.H"
@@ -15,6 +18,7 @@ using namespace amrex::literals;
 #endif
 
 namespace amr_wind {
+class CFDSim;
 
 class HelicsStorage
 {

@@ -1,13 +1,31 @@
 #include "amr-wind/equation_systems/icns/source_terms/GeostrophicForcing.H"
+
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Print.H>
+#include <cmath>
+#include <fstream>
+#include <limits>
+#include <numbers>
+#include <string_view>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/trig_ops.H"
-#include "amr-wind/core/vs/vstraits.H"
 #include "amr-wind/physics/multiphase/MultiPhase.H"
 #include "amr-wind/equation_systems/vof/volume_fractions.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "AMReX_ParmParse.H"
-#include "AMReX_Gpu.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/Physics.H"
+#include "amr-wind/core/SimTime.H"
 
 using namespace amrex::literals;
 

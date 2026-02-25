@@ -6,6 +6,7 @@
 #include "AMReX_Orientation.H"
 
 namespace amr_wind {
+class Field;
 
 /** Applies a non-zero gradient at the domain boundary
  *  \ingroup field_bc

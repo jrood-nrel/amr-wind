@@ -1,12 +1,43 @@
 #include "amr-wind/utilities/sampling/FieldNorms.H"
+
+#include <__ostream/basic_ostream.h>
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IndexType.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_String.H>
+#include <utility>
+#include <algorithm>
+#include <cmath>
+#include <fstream>
+#include <iomanip>
+#include <string_view>
+
 #include "amr-wind/utilities/io_utils.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
 #include "amr-wind/utilities/IOManager.H"
 #include "amr-wind/utilities/constants.H"
 #include "AMReX_MultiFabUtil.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
-#include <utility>
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
 
 using namespace amrex::literals;
 

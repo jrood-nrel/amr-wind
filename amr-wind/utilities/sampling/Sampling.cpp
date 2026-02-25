@@ -1,14 +1,46 @@
+#include <__ostream/basic_ostream.h>
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_AsyncOut.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_Particle.H>
+#include <AMReX_ParticleContainerI.H>
+#include <AMReX_ParticleIO.H>
+#include <AMReX_ParticleTransformation.H>
+#include <AMReX_PlotFileUtil.H>
+#include <AMReX_Print.H>
+#include <AMReX_Scan.H>
+#include <AMReX_String.H>
+#include <AMReX_Tuple.H>
+#include <AMReX_Utility.H>
+#include <AMReX_VectorIO.H>
+#include <AMReX_VisMF.H>
+#include <AMReX_VisMFBuffer.H>
 #include <algorithm>
 #include <memory>
 #include <utility>
+#include <__bit_reference>
+#include <fstream>
+#include <iomanip>
+#include <map>
+#include <string_view>
 
 #include "amr-wind/utilities/sampling/Sampling.H"
 #include "amr-wind/utilities/io_utils.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
 #include "amr-wind/utilities/IOManager.H"
-
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/utilities/DerivedQuantity.H"
+#include "amr-wind/utilities/sampling/SamplingContainer.H"
 
 using namespace amrex::literals;
 

@@ -1,15 +1,23 @@
 #ifndef TIOGAINTERFACE_H
 #define TIOGAINTERFACE_H
 
+#include <AMReX_BLassert.H>
+#include <AMReX_REAL.H>
 #include <vector>
+#include <memory>
+#include <string>
+
 #include "amr-wind/overset/OversetManager.H"
 #include "amr-wind/overset/overset_types.H"
+#include "amr-wind/core/IntScratchField.H"
+#include "amr-wind/core/ScratchField.H"
 
 namespace amr_wind {
 
 class IntField;
 class ScratchField;
 class IntScratchField;
+class CFDSim;
 
 /** AMR mesh data in TIOGA format
  */

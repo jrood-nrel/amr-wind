@@ -1,8 +1,20 @@
 #ifndef KSGSM84SRC_H
 #define KSGSM84SRC_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_Extension.H>
+#include <AMReX_GpuQualifiers.H>
+#include <cmath>
+#include <string>
+
 #include "amr-wind/equation_systems/tke/TKESource.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

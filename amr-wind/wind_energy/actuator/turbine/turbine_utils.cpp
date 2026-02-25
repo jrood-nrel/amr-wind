@@ -1,8 +1,18 @@
 #include "amr-wind/wind_energy/actuator/turbine/turbine_utils.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
-#include "amr-wind/utilities/io_utils.H"
+
+#include <AMReX.H>
+#include <AMReX_RealBox.H>
+#include <vector>
+
 #include "amr-wind/wind_energy/actuator/FLLC.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/wind_energy/actuator/turbine/turbine_types.H"
+
+namespace amr_wind {
+namespace actuator {
+struct ActGrid;
+} // namespace actuator
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

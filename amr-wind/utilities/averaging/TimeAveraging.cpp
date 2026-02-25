@@ -1,11 +1,15 @@
+#include <AMReX_Print.H>
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
 #include <utility>
+#include <cmath>
+#include <string_view>
 
 #include "amr-wind/utilities/averaging/TimeAveraging.H"
-#include "amr-wind/utilities/averaging/ReAveraging.H"
 #include "amr-wind/utilities/io_utils.H"
 #include "amr-wind/CFDSim.H"
-
 #include "AMReX_ParmParse.H"
+#include "amr-wind/core/SimTime.H"
 
 namespace amr_wind::averaging {
 

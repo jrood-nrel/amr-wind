@@ -2,6 +2,9 @@
 #define FLLC_H
 
 #include <cstdint>
+#include <map>
+#include <string>
+
 #include "amr-wind/wind_energy/actuator/actuator_types.H"
 #include "amr-wind/wind_energy/actuator/ActParser.H"
 #include "AMReX_REAL.H"

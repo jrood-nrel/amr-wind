@@ -1,11 +1,31 @@
 #ifndef ABLFILLINFLOW_H
 #define ABLFILLINFLOW_H
 
+#include <AMReX_Array.H>
+#include <AMReX_BCRec.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_FabArrayCommI.H>
+#include <AMReX_FillPatchUtil_I.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_Loop.H>
+#include <AMReX_REAL.H>
+
 #include "amr-wind/core/FieldFillPatchOps.H"
 #include "amr-wind/core/FieldBCOps.H"
 #include "amr-wind/wind_energy/ABLBoundaryPlane.H"
+#include "amr-wind/core/FieldDescTypes.H"
+
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 namespace amr_wind {
+class ABLBoundaryPlane;
+class Field;
+class SimTime;
 
 /** Operations to perform inflow of data from boundary planes
  *  \ingroup we_abl

@@ -1,7 +1,22 @@
+#include <_stdlib.h>
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Arena.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_iMultiFab.H>
 #include <memory>
+#include <utility>
 
 #include "amr-wind/core/FieldRepo.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/FieldUtils.H"
+
+namespace amrex {
+class DistributionMapping;
+} // namespace amrex
 
 using namespace amrex::literals;
 

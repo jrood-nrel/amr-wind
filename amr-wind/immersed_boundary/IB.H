@@ -1,8 +1,13 @@
 #ifndef IB_H
 #define IB_H
 
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/immersed_boundary/IBModel.H"
 
 /** \defgroup immersed_boundary Immersed boundary module
  *  Immersed boundary class
@@ -11,6 +16,7 @@
 namespace amr_wind {
 
 class Field;
+class CFDSim;
 
 namespace ib {
 

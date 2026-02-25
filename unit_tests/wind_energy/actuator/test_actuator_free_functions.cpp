@@ -1,9 +1,14 @@
-#include "aw_test_utils/AmrexTest.H"
+#include <gtest/gtest.h>
+#include <limits>
+#include <string>
+
 #include "amr-wind/utilities/trig_ops.H"
-#include "amr-wind/core/vs/vector_space.H"
 #include "amr-wind/wind_energy/actuator/actuator_utils.H"
-#include <cmath>
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/tensor.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
 
 using namespace amrex::literals;
 

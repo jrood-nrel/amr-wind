@@ -1,6 +1,33 @@
+#include <_stdlib.h>
+#include <gtest/gtest.h>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_BCRec.H>
+#include <AMReX_BC_TYPES.H>
+#include <AMReX_Box.H>
+#include <AMReX_Dim3.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <cmath>
+#include <limits>
+#include <string>
+#include <string_view>
+#include <utility>
+
 #include "aw_test_utils/MeshTest.H"
 #include "hydro_godunov_ppm.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
 
 using namespace amrex::literals;
 

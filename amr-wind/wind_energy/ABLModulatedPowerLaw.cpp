@@ -1,15 +1,42 @@
+#include <stdlib.h>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_Random.H>
+#include <AMReX_SPACE.H>
+#include <string>
+#include <cmath>
+#include <string_view>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/wind_energy/ABLModulatedPowerLaw.H"
 #include "amr-wind/wind_energy/ABLFillMPL.H"
-#include "AMReX_Gpu.H"
 #include "AMReX_ParmParse.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
 #include "amr-wind/utilities/index_operations.H"
-#include "AMReX_PlotFileUtil.H"
-#include <sstream>
-#include <iostream>
-#include <string>
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/incflo_enums.H"
+#include "amr-wind/utilities/trig_ops.H"
+
+namespace amrex {
+struct RandomEngine;
+} // namespace amrex
 
 using namespace amrex::literals;
 

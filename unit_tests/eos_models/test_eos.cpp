@@ -1,7 +1,12 @@
-#include <AMReX_Gpu.H>
-#include "aw_test_utils/AmrexTest.H"
+#include <gtest/gtest.h>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuMemory.H>
+#include <AMReX_GpuQualifiers.H>
+#include <string>
+
 #include "amr-wind/eos_models/EOSModel.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/utilities/constants.H"
 
 using namespace amrex::literals;
 

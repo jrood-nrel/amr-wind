@@ -1,8 +1,19 @@
+#include <stddef.h>
+#include <AMReX.H>
+#include <AMReX_BLassert.H>
 #include <algorithm>
 #include <string>
+#include <numeric>
+#include <utility>
+
 #include "amr-wind/utilities/DerivedQuantity.H"
 #include "amr-wind/utilities/io_utils.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/ScratchField.H"
+
+namespace amr_wind {
+class FieldRepo;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

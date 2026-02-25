@@ -1,9 +1,20 @@
 #ifndef VORTEXRING_H
 #define VORTEXRING_H
 
+#include <AMReX_Extension.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/Field.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+class FieldRepo;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

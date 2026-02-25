@@ -1,9 +1,26 @@
 #ifndef FIELDREFINEMENT_H
 #define FIELDREFINEMENT_H
 
+#include <_stdlib.h>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_RealVect.H>
+#include <AMReX_SPACE.H>
+#include <AMReX_TagBox.H>
+#include <AMReX_Vector.H>
+#include <cmath>
+#include <string>
+
 #include "AMReX_REAL.H"
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/tagging/RefinementCriteria.H"
+#include "amr-wind/core/FieldRepo.H"
 
 using namespace amrex::literals;
 

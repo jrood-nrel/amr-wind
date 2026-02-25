@@ -1,8 +1,15 @@
 #ifndef CONSTANTMAP_H
 #define CONSTANTMAP_H
 
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/core/MeshMap.H"
 #include "AMReX_REAL.H"
+
+namespace amrex {
+class Geometry;
+} // namespace amrex
 
 using namespace amrex::literals;
 

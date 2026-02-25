@@ -1,3 +1,6 @@
+#include <stddef.h>
+#include <AMReX_BLassert.H>
+#include <AMReX_Vector.H>
 #include <fstream>
 
 #include "amr-wind/utilities/io_utils.H"

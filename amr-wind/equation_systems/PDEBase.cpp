@@ -1,15 +1,25 @@
 #include "amr-wind/equation_systems/PDEBase.H"
+
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_Array.H>
+#include <AMReX_Print.H>
+#include <AMReX_SPACE.H>
+#include <cmath>
+#include <string_view>
+
 #include "amr-wind/equation_systems/SchemeTraits.H"
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/equation_systems/PDEHelpers.H"
-#include "amr-wind/incflo_enums.H"
 #include "amr-wind/core/field_ops.H"
 #include "amr-wind/utilities/constants.H"
 #include "amr-wind/utilities/diagnostics.H"
-
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/equation_systems/PDEFields.H"
 
 using namespace amrex::literals;
 

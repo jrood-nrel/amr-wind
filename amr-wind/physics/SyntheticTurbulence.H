@@ -1,6 +1,10 @@
 #ifndef SYNTHETICTURBULENCE_H
 #define SYNTHETICTURBULENCE_H
 
+#include <AMReX_Extension.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Vector.H>
 #include <string>
 #include <cmath>
 #include <memory>
@@ -10,6 +14,18 @@
 #include "amr-wind/core/vs/vector_space.H"
 #include "amr-wind/CFDSim.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/tensor.H"
+#include "amr-wind/core/vs/vector.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+class FieldRepo;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

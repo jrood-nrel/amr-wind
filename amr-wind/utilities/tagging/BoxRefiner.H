@@ -1,8 +1,20 @@
 #ifndef BOXREFINER_H
 #define BOXREFINER_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_TagBox.H>
+#include <string>
+
 #include "amr-wind/utilities/tagging/GeometryRefinement.H"
 #include "amr-wind/core/vs/vector_space.H"
+#include "amr-wind/core/vs/vector.H"
+
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
 
 namespace amr_wind::tagging {
 

@@ -1,6 +1,15 @@
 #ifndef POWERLAWPROFILE_H
 #define POWERLAWPROFILE_H
 
+#include <AMReX_Algorithm.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_Orientation.H>
+#include <cmath>
+#include <string>
+
 #include "AMReX_Geometry.H"
 #include "AMReX_Gpu.H"
 #include "AMReX_REAL.H"

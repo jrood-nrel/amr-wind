@@ -1,6 +1,7 @@
 #ifndef VIEWFIELD_H
 #define VIEWFIELD_H
 
+#include <AMReX_IntVect.H>
 #include <string>
 
 #include "amr-wind/core/FieldDescTypes.H"
@@ -10,6 +11,7 @@
 namespace amr_wind {
 
 class FieldRepo;
+enum class FieldLoc : std::uint8_t;
 
 /** Subview of a Field or a ScratchField
  *  \ingroup fields

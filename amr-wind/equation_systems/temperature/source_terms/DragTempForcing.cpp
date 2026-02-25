@@ -1,10 +1,30 @@
 #include "amr-wind/equation_systems/temperature/source_terms/DragTempForcing.H"
-#include "amr-wind/utilities/IOManager.H"
+
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_iMultiFab.H>
+#include <cmath>
+#include <limits>
+#include <string_view>
+
 #include "amr-wind/wind_energy/MOData.H"
 #include "AMReX_ParmParse.H"
-#include "AMReX_Gpu.H"
-#include "AMReX_Random.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/FieldUtils.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/SimTime.H"
 
 using namespace amrex::literals;
 

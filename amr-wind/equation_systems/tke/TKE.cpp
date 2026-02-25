@@ -1,8 +1,13 @@
 #include "amr-wind/equation_systems/tke/TKE.H"
-#include "amr-wind/equation_systems/AdvOp_Godunov.H"
-#include "amr-wind/equation_systems/AdvOp_MOL.H"
-#include "amr-wind/equation_systems/BCOps.H"
-#include "amr-wind/equation_systems/tke/tke_ops.H"
+
+#include <AMReX_Box.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_MFParallelFor.H>
+
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/equation_systems/PDE.H"
+#include "amr-wind/equation_systems/PDEHelpers.H"
+#include "amr-wind/equation_systems/SchemeTraits.H"
 
 namespace amr_wind::pde {
 

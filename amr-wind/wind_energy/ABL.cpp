@@ -1,4 +1,9 @@
+#include <AMReX.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_MFIter.H>
 #include <memory>
+#include <string_view>
 
 #include "amr-wind/wind_energy/ABL.H"
 #include "amr-wind/wind_energy/ABLFieldInit.H"
@@ -9,14 +14,18 @@
 #include "amr-wind/equation_systems/temperature/source_terms/ABLMesoForcingTemp.H"
 #include "amr-wind/equation_systems/icns/source_terms/HurricaneForcing.H"
 #include "amr-wind/equation_systems/temperature/source_terms/HurricaneTempForcing.H"
-#include "amr-wind/incflo.H"
-#include "amr-wind/wind_energy/ABLMesoscaleForcing.H"
 #include "amr-wind/wind_energy/ABLMesoscaleInput.H"
-
 #include "AMReX_ParmParse.H"
 #include "AMReX_MultiFab.H"
 #include "AMReX_Print.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/equation_systems/PDEFields.H"
+#include "amr-wind/utilities/FieldPlaneAveragingFine.H"
+#include "amr-wind/wind_energy/ABLFieldInitFile.H"
 
 using namespace amrex::literals;
 

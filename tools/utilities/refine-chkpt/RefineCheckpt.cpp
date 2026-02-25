@@ -1,5 +1,19 @@
 #include "RefineCheckpt.H"
+
+#include <__ostream/basic_ostream.h>
+#include <AMReX.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_ParallelDescriptor.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Print.H>
+#include <AMReX_TagBox.H>
+#include <string>
+#include <string_view>
+
 #include "amr-wind/utilities/IOManager.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/SimTime.H"
 
 namespace amr_wind {
 namespace tools {

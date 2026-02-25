@@ -1,12 +1,28 @@
 #ifndef ABLMODULATEDPOWERLAW_H
 #define ABLMODULATEDPOWERLAW_H
 
+#include <AMReX_GpuContainers.H>
+#include <AMReX_Vector.H>
+#include <limits>
+#include <memory>
+
 #include "amr-wind/core/Field.H"
 #include "amr-wind/CFDSim.H"
 #include "AMReX_Gpu.H"
 #include "amr-wind/utilities/trig_ops.H"
 #include "amr-wind/core/vs/vector_space.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+class FieldRepo;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+class MultiFab;
+} // namespace amrex
 
 using namespace amrex::literals;
 

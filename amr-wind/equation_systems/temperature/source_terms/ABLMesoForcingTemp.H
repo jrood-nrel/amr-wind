@@ -1,7 +1,14 @@
 #ifndef ABLMESOFORCINGTEMP_H
 #define ABLMESOFORCINGTEMP_H
 
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_Vector.H>
 #include <memory>
+#include <string>
+
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/equation_systems/temperature/TemperatureSource.H"
 #include "amr-wind/core/SimTime.H"
@@ -10,6 +17,11 @@
 #include "amr-wind/wind_energy/ABLMesoscaleForcing.H"
 #include "amr-wind/wind_energy/ABLMesoscaleInput.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class ABLMesoscaleInput;
+class CFDSim;
+} // namespace amr_wind
 
 namespace amr_wind::pde::temperature {
 

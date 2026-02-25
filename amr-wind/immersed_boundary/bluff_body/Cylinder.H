@@ -1,8 +1,12 @@
 #ifndef CYLINDER_H
 #define CYLINDER_H
 
+#include <string>
+
 #include "amr-wind/immersed_boundary/bluff_body/BluffBody.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/immersed_boundary/IBTypes.H"
 
 using namespace amrex::literals;
 

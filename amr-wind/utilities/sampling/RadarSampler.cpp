@@ -1,10 +1,28 @@
 #include "amr-wind/utilities/sampling/RadarSampler.H"
+
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_INT.H>
+#include <AMReX_IntVect.H>
+#include <AMReX_Math.H>
+#include <AMReX_Print.H>
+#include <AMReX_RealVect.H>
+#include <AMReX_SPACE.H>
+#include <cmath>
+#include <limits>
+#include <string_view>
+
 #include "amr-wind/CFDSim.H"
-#include "amr-wind/utilities/tensor_ops.H"
 #include "amr-wind/utilities/trig_ops.H"
 #include "amr-wind/utilities/index_operations.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/utilities/sampling/SamplingUtils.H"
 
 using namespace amrex::literals;
 

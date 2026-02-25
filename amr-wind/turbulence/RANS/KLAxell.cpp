@@ -1,4 +1,21 @@
 #include "amr-wind/turbulence/RANS/KLAxell.H"
+
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_Box.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_FabArray.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MultiFab.H>
+#include <cmath>
+#include <limits>
+#include <string_view>
+
 #include "amr-wind/equation_systems/PDEBase.H"
 #include "amr-wind/turbulence/TurbModelDefs.H"
 #include "amr-wind/fvm/gradient.H"
@@ -7,6 +24,16 @@
 #include "amr-wind/equation_systems/tke/TKE.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/field_ops.H"
+#include "amr-wind/equation_systems/PDEFields.H"
+
+enum struct DiffusionType : std::uint8_t;
+namespace amr_wind {
+enum class FieldState : std::uint8_t;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

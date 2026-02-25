@@ -1,3 +1,6 @@
+#include <iostream>
+#include <string>
+
 #include "gtest/gtest.h"
 #include "aw_test_utils/MeshTest.H"
 #include "amr-wind/turbulence/TurbulenceModel.H"

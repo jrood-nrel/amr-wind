@@ -1,9 +1,21 @@
 #include "amr-wind/utilities/tagging/FieldRefinement.H"
-#include "amr-wind/CFDSim.H"
 
+#include <stdlib.h>
+#include <AMReX_BLassert.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MFParallelFor.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_iMultiFab.H>
+#include <limits>
+#include <string_view>
+#include <utility>
+
+#include "amr-wind/CFDSim.H"
 #include "AMReX.H"
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/IntField.H"
 
 using namespace amrex::literals;
 

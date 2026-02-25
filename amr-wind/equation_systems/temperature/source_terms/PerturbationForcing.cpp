@@ -1,10 +1,31 @@
 #include "amr-wind/equation_systems/temperature/source_terms/PerturbationForcing.H"
-#include "amr-wind/utilities/IOManager.H"
+
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_RealVect.H>
+#include <AMReX_iMultiFab.H>
+#include <string_view>
 
 #include "AMReX_ParmParse.H"
-#include "AMReX_Gpu.H"
 #include "AMReX_Random.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/SimTime.H"
+
+namespace amrex {
+struct RandomEngine;
+} // namespace amrex
 
 using namespace amrex::literals;
 

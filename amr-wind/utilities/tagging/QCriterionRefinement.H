@@ -1,8 +1,15 @@
 #ifndef QCRITERIONREFINEMENT_H
 #define QCRITERIONREFINEMENT_H
 
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/utilities/tagging/RefinementCriteria.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

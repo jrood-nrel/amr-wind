@@ -1,4 +1,14 @@
 #include "amr-wind/boundary_conditions/BCInterface.H"
+
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_BC_TYPES.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_Print.H>
+#include <AMReX_String.H>
+#include <string_view>
+
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/boundary_conditions/FixedGradientBC.H"
 #include "amr-wind/boundary_conditions/MassInflowOutflowBC.H"

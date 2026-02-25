@@ -1,12 +1,26 @@
 #ifndef OCEANWAVESBOUNDARY_H
 #define OCEANWAVESBOUNDARY_H
 
+#include <AMReX_BndryRegister.H>
+#include <AMReX_Array.H>
+
 #include "amr-wind/core/Field.H"
 #include "amr-wind/core/IntField.H"
 #include "amr-wind/CFDSim.H"
 #include "AMReX_Gpu.H"
-#include <AMReX_BndryRegister.H>
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+class FieldRepo;
+class IntField;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+class MultiFab;
+} // namespace amrex
 
 using namespace amrex::literals;
 

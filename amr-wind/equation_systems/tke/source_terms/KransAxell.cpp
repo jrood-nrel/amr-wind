@@ -1,4 +1,22 @@
-#include <AMReX_Orientation.H>
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Arena.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_IArrayBox.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_iMultiFab.H>
+#include <cmath>
+#include <fstream>
+#include <string_view>
 
 #include "amr-wind/equation_systems/tke/source_terms/KransAxell.H"
 #include "amr-wind/CFDSim.H"
@@ -7,6 +25,13 @@
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "amr-wind/utilities/constants.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/FieldUtils.H"
+#include "amr-wind/core/IntField.H"
+#include "amr-wind/core/ScratchField.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/transport_models/TransportModel.H"
 
 using namespace amrex::literals;
 namespace amr_wind::pde::tke {

@@ -1,9 +1,20 @@
 #ifndef CYLINDERREFINER_H
 #define CYLINDERREFINER_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_RealBox.H>
+#include <AMReX_TagBox.H>
+#include <string>
+
 #include "amr-wind/utilities/tagging/GeometryRefinement.H"
 #include "amr-wind/core/vs/vector_space.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/vector.H"
+
+namespace amr_wind {
+class CFDSim;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

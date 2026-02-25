@@ -1,5 +1,7 @@
 #include "amr-wind/core/MeshMap.H"
+
 #include "amr-wind/CFDSim.H"
+#include "amr-wind/core/FieldRepo.H"
 
 namespace amr_wind {
 

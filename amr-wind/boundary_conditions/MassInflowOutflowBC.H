@@ -6,6 +6,7 @@
 #include "AMReX_Orientation.H"
 
 namespace amr_wind {
+class Field;
 
 /** Custom Neumann fills for the inflow-outflow BC
  *  \ingroup field_bc

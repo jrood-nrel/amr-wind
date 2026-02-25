@@ -1,6 +1,12 @@
 #ifndef WING_OPS_H
 #define WING_OPS_H
 
+#include <AMReX_Print.H>
+#include <cmath>
+#include <numbers>
+#include <string>
+#include <type_traits>
+
 #include "amr-wind/wind_energy/actuator/wing/ActuatorWing.H"
 #include "amr-wind/wind_energy/actuator/actuator_types.H"
 #include "amr-wind/wind_energy/actuator/actuator_ops.H"
@@ -10,6 +16,29 @@
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "amr-wind/core/vs/vector_space.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Slice.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/utilities/trig_ops.H"
+#include "amr-wind/wind_energy/actuator/FLLC.H"
+
+namespace amr_wind {
+namespace actuator {
+namespace ops {
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ComputeForceOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct ProcessOutputsOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct UpdatePosOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct UpdateVelOp;
+} // namespace ops
+struct WingBaseData;
+struct WingType;
+} // namespace actuator
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

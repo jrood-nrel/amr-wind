@@ -1,10 +1,23 @@
 #ifndef BOUSSINESQBUOYANCY_H
 #define BOUSSINESQBUOYANCY_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/transport_models/TransportModel.H"
 #include "amr-wind/equation_systems/icns/MomentumSource.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+namespace transport {
+class TransportModel;
+} // namespace transport
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

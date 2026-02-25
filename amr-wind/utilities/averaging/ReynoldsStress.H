@@ -1,7 +1,15 @@
 #ifndef REYNOLDSSTRESS_H
 #define REYNOLDSSTRESS_H
 
+#include <AMReX_REAL.H>
+#include <string>
+
 #include "amr-wind/utilities/averaging/TimeAveraging.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+} // namespace amr_wind
 
 namespace amr_wind::averaging {
 

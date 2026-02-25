@@ -1,8 +1,11 @@
 #ifndef STOKESWAVES_H
 #define STOKESWAVES_H
 
+#include <string>
+
 #include "amr-wind/ocean_waves/relaxation_zones/RelaxationZones.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/ocean_waves/OceanWavesTypes.H"
 
 using namespace amrex::literals;
 

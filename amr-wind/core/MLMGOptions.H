@@ -2,6 +2,7 @@
 #define MLMGOPTIONS_H
 
 #include <string>
+#include <limits>
 
 #include "AMReX_REAL.H"
 #include "AMReX_ParmParse.H"

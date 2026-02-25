@@ -2,7 +2,17 @@
 #define AMD_H
 
 #include <AMReX_GpuContainers.H>
+#include <stdlib.h>
+#include <AMReX_Algorithm.H>
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Extension.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_Vector.H>
 #include <string>
+#include <cmath>
+#include <limits>
+
 #include "amr-wind/turbulence/TurbModelBase.H"
 #include "amr-wind/utilities/FieldPlaneAveragingFine.H"
 #include "amr-wind/core/FieldRepo.H"
@@ -10,6 +20,14 @@
 #include "amr-wind/utilities/DirectionSelector.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/turbulence/TurbulenceModel.H"
+
+enum struct DiffusionType : std::uint8_t;
+namespace amr_wind {
+class CFDSim;
+class Field;
+enum class FieldState : std::uint8_t;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

@@ -1,11 +1,21 @@
 #ifndef ABLMESOSCALEFORCING_H
 #define ABLMESOSCALEFORCING_H
 
+#include <AMReX_String.H>
 #include <string>
+
 #include "AMReX_REAL.H"
 #include "AMReX_Array.H"
 #include "AMReX_Vector.H"
 #include "amr-wind/CFDSim.H"
+
+namespace amr_wind {
+class CFDSim;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

@@ -1,9 +1,11 @@
 #ifndef AIRFOILTABLE_H
 #define AIRFOILTABLE_H
 
-#include "amr-wind/wind_energy/actuator/actuator_types.H"
 #include <iosfwd>
 #include <memory>
+#include <string>
+
+#include "amr-wind/wind_energy/actuator/actuator_types.H"
 #include "AMReX_REAL.H"
 
 using namespace amrex::literals;

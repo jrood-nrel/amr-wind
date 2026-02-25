@@ -1,10 +1,18 @@
 #ifndef REFINEMENTCRITERIA_H
 #define REFINEMENTCRITERIA_H
 
+#include <AMReX_REAL.H>
+#include <AMReX_Vector.H>
+#include <memory>
+#include <string>
+
 #include "AMReX_AmrCore.H"
 #include "AMReX_TagBox.H"
-
 #include "amr-wind/core/Factory.H"
+
+namespace amrex {
+class TagBoxArray;
+} // namespace amrex
 
 /**
  *  \defgroup amr_utils Mesh refinement

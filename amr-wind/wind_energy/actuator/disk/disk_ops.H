@@ -1,11 +1,35 @@
 #ifndef DISK_OPS_H
 #define DISK_OPS_H
 
+#include <__ostream/basic_ostream.h>
+#include <AMReX_Extension.H>
+#include <AMReX_RealBox.H>
+#include <cmath>
+#include <sstream>
+#include <string>
+#include <type_traits>
+
 #include "amr-wind/wind_energy/actuator/disk/ActuatorDisk.H"
 #include "amr-wind/wind_energy/actuator/actuator_ops.H"
 #include "amr-wind/utilities/tensor_ops.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/wind_energy/actuator/ActParser.H"
+#include "amr-wind/wind_energy/actuator/actuator_types.H"
+
+namespace amr_wind {
+namespace actuator {
+namespace ops {
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct UpdatePosOp;
+template <typename ActTrait, typename SrcTrait, typename = void>
+struct UpdateVelOp;
+} // namespace ops
+struct DiskType;
+} // namespace actuator
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

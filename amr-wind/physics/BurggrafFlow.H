@@ -1,10 +1,24 @@
 #ifndef BURGGRAFFLOW_H
 #define BURGGRAFFLOW_H
 
+#include <AMReX_Extension.H>
+#include <AMReX_GpuQualifiers.H>
+#include <string>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/Field.H"
 #include "amr-wind/CFDSim.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+class FieldRepo;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

@@ -1,7 +1,15 @@
 #include "amr-wind/equation_systems/icns/source_terms/SynthTurbForcing.H"
-#include "amr-wind/CFDSim.H"
 
-#include "AMReX_Gpu.H"
+#include <AMReX.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MultiFab.H>
+
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/Physics.H"
 
 namespace amr_wind::pde::icns {
 

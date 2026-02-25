@@ -2,6 +2,7 @@
 #define ABL_H
 
 #include <memory>
+#include <string>
 
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/wind_energy/ABLFieldInit.H"
@@ -14,6 +15,14 @@
 #include "amr-wind/wind_energy/ABLModulatedPowerLaw.H"
 #include "amr-wind/wind_energy/ABLAnelastic.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/wind_energy/ABLMesoscaleInput.H"
+
+namespace amr_wind {
+class ABLFieldInit;
+class ABLFieldInitFile;
+class CFDSim;
+class Field;
+} // namespace amr_wind
 
 using namespace amrex::literals;
 

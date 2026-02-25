@@ -1,10 +1,23 @@
 #ifndef HURRICANE_FORCING_H
 #define HURRICANE_FORCING_H
 
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_GpuContainers.H>
+#include <string>
+
 #include "amr-wind/core/FieldRepo.H"
 #include "amr-wind/equation_systems/icns/MomentumSource.H"
 #include "amr-wind/utilities/FieldPlaneAveraging.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class VelPlaneAveraging;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

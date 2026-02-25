@@ -1,10 +1,21 @@
 #include "amr-wind/equation_systems/icns/source_terms/CoriolisForcing.H"
+
+#include <AMReX_Array.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MultiFab.H>
+#include <cmath>
+#include <string_view>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/tensor_ops.H"
 #include "amr-wind/utilities/trig_ops.H"
-
 #include "AMReX_ParmParse.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/FieldUtils.H"
 
 using namespace amrex::literals;
 

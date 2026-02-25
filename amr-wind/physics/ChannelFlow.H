@@ -1,12 +1,27 @@
 #ifndef CHANNELFLOW_H
 #define CHANNELFLOW_H
 
+#include <AMReX_Extension.H>
+#include <AMReX_GpuQualifiers.H>
+#include <cmath>
+#include <string>
+
 #include "amr-wind/core/Physics.H"
 #include "amr-wind/core/Field.H"
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/boundary_conditions/wall_models/WallFunction.H"
 #include "amr-wind/turbulence/TurbulenceModel.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class FieldRepo;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+class Geometry;
+} // namespace amrex
 
 using namespace amrex::literals;
 

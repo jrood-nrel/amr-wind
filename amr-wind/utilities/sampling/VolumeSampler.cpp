@@ -1,4 +1,14 @@
+#include <stddef.h>
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_Print.H>
+#include <AMReX_RealVect.H>
+#include <AMReX_SPACE.H>
 #include <limits>
+#include <string_view>
 
 #include "amr-wind/utilities/sampling/VolumeSampler.H"
 #include "amr-wind/CFDSim.H"

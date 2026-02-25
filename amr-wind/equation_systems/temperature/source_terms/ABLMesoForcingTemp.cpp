@@ -1,15 +1,25 @@
 #include "amr-wind/equation_systems/temperature/source_terms/ABLMesoForcingTemp.H"
+
+#include <AMReX_REAL.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_String.H>
+#include <memory>
+#include <algorithm>
+#include <cmath>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/wind_energy/ABL.H"
-#include "amr-wind/core/FieldUtils.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
-#include "amr-wind/utilities/index_operations.H"
 #include "amr-wind/utilities/linear_interpolation.H"
 #include "AMReX_ParmParse.H"
-#include "AMReX_Gpu.H"
 #include "AMReX_Print.H"
-#include <AMReX_REAL.H>
-#include <memory>
+#include "amr-wind/core/Physics.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/wind_energy/ABLMesoscaleInput.H"
+#include "amr-wind/wind_energy/ABLStatsBase.H"
 
 using namespace amrex::literals;
 

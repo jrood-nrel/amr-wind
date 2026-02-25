@@ -1,6 +1,10 @@
 #ifndef ABLWALLFUNCTION_H
 #define ABLWALLFUNCTION_H
 
+#include <AMReX_Array.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/FieldPlaneAveraging.H"
 #include "amr-wind/utilities/FieldPlaneAveragingFine.H"
@@ -8,6 +12,15 @@
 #include "amr-wind/wind_energy/MOData.H"
 #include "amr-wind/utilities/constants.H"
 #include "AMReX_REAL.H"
+
+namespace amr_wind {
+class CFDSim;
+class Field;
+enum class FieldState : std::uint8_t;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+} // namespace amrex
 
 using namespace amrex::literals;
 

@@ -1,12 +1,25 @@
 #include "amr-wind/physics/ForestDrag.H"
+
+#include <AMReX.H>
+#include <AMReX_AmrCore.H>
+#include <AMReX_Array4.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_MFIter.H>
+#include <AMReX_MultiFab.H>
+#include <fstream>
+#include <string_view>
+
 #include "amr-wind/CFDSim.H"
-#include "AMReX_iMultiFab.H"
-#include "AMReX_MultiFabUtil.H"
 #include "AMReX_ParmParse.H"
-#include "AMReX_ParReduce.H"
-#include "amr-wind/utilities/trig_ops.H"
 #include "amr-wind/utilities/IOManager.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldRepo.H"
 
 using namespace amrex::literals;
 

@@ -1,7 +1,13 @@
 #ifndef ABLMESOFORCINGMOM_H
 #define ABLMESOFORCINGMOM_H
 
+#include <AMReX_Array.H>
+#include <AMReX_Array4.H>
+#include <AMReX_Box.H>
+#include <AMReX_GpuContainers.H>
 #include <memory>
+#include <string>
+
 #include "AMReX_REAL.H"
 #include "AMReX_Vector.H"
 #include "amr-wind/core/FieldRepo.H"
@@ -11,6 +17,12 @@
 #include "amr-wind/utilities/ncutils/nc_interface.H"
 #include "amr-wind/wind_energy/ABLMesoscaleForcing.H"
 #include "amr-wind/wind_energy/ABLMesoscaleInput.H"
+
+namespace amr_wind {
+class ABLMesoscaleInput;
+class CFDSim;
+class VelPlaneAveragingFine;
+} // namespace amr_wind
 
 namespace amr_wind::pde::icns {
 

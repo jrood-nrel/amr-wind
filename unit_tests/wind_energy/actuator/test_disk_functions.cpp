@@ -1,7 +1,18 @@
+#include <__ostream/basic_ostream.h>
 #include <numbers>
+#include <limits>
+#include <memory>
+#include <sstream>
+#include <string>
+
 #include "gtest/gtest.h"
 #include "amr-wind/wind_energy/actuator/disk/disk_ops.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/vector.H"
+#include "amr-wind/core/vs/vectorI.H"
+#include "amr-wind/core/vs/vstraits.H"
+#include "amr-wind/wind_energy/actuator/actuator_types.H"
+#include "amr-wind/wind_energy/actuator/disk/ActuatorDisk.H"
 
 using namespace amrex::literals;
 

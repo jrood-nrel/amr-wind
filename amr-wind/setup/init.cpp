@@ -1,13 +1,29 @@
-#include <AMReX_BC_TYPES.H>
-#include "amr-wind/incflo.H"
+#include <stdlib.h>
+#include <AMReX.H>
+#include <AMReX_BLProfiler.H>
+#include <AMReX_FabArrayUtility.H>
+#include <AMReX_Loop.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Print.H>
 #include <cmath>
+#include <algorithm>
+#include <memory>
+#include <string>
+#include <string_view>
 
-#include "amr-wind/core/Physics.H"
-#include "amr-wind/wind_energy/ABL.H"
-#include "amr-wind/physics/BoussinesqBubble.H"
-#include "amr-wind/utilities/tagging/RefinementCriteria.H"
-#include "amr-wind/utilities/tagging/CartBoxRefinement.H"
+#include "amr-wind/incflo.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/CFDSim.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/core/SimTime.H"
+#include "amr-wind/core/field_ops.H"
+#include "amr-wind/equation_systems/PDEBase.H"
+#include "amr-wind/equation_systems/PDEFields.H"
+#include "amr-wind/incflo_enums.H"
+#include "amr-wind/utilities/constants.H"
 
 using namespace amrex::literals;
 

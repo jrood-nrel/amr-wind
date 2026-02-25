@@ -1,7 +1,20 @@
 #ifndef ABLBOUNDARYPLANE_H
 #define ABLBOUNDARYPLANE_H
 
+#include <stddef.h>
+#include <AMReX.H>
+#include <AMReX_Box.H>
+#include <AMReX_BoxArray.H>
+#include <AMReX_FArrayBox.H>
+#include <AMReX_GpuContainers.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_Vector.H>
 #include <cstdint>
+#include <limits>
+#include <memory>
+#include <string>
+#include <unordered_map>
+
 #include "amr-wind/core/Field.H"
 #include "amr-wind/CFDSim.H"
 #include "amr-wind/utilities/ncutils/nc_interface.H"
@@ -11,8 +24,20 @@
 #include "AMReX_BndryRegister.H"
 #include "AMReX_REAL.H"
 
+namespace amr_wind {
+class CFDSim;
+class Field;
+class FieldRepo;
+class SimTime;
+} // namespace amr_wind
+namespace amrex {
+class AmrCore;
+class MultiFab;
+} // namespace amrex
+
 using namespace amrex::literals;
 class MultiBlockContainer;
+
 namespace amr_wind {
 
 enum struct io_mode : std::uint8_t { output, input, undefined };

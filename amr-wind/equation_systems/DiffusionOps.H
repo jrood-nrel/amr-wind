@@ -1,19 +1,47 @@
 #ifndef DIFFUSIONOPS_H
 #define DIFFUSIONOPS_H
 
+#include <AMReX.H>
+#include <AMReX_Array.H>
+#include <AMReX_Geometry.H>
+#include <AMReX_GpuDevice.H>
+#include <AMReX_GpuLaunchFunctsC.H>
+#include <AMReX_GpuQualifiers.H>
+#include <AMReX_MultiFab.H>
+#include <AMReX_Orientation.H>
+#include <AMReX_Vector.H>
+#include <memory>
+#include <string>
+#include <type_traits>
+
 #include "amr-wind/core/MLMGOptions.H"
 #include "amr-wind/equation_systems/PDETraits.H"
 #include "amr-wind/equation_systems/SchemeTraits.H"
 #include "amr-wind/equation_systems/PDEOps.H"
 #include "amr-wind/equation_systems/PDEHelpers.H"
 #include "amr-wind/diffusion/diffusion.H"
-
 #include "AMReX_MLABecLaplacian.H"
 #include "AMReX_MLTensorOp.H"
 #include "AMReX_MLMG.H"
 #include "AMReX_AmrCore.H"
 #include "AMReX_MultiFabUtil.H"
 #include "AMReX_REAL.H"
+#include "amr-wind/core/Field.H"
+#include "amr-wind/core/FieldDescTypes.H"
+#include "amr-wind/core/FieldRepo.H"
+#include "amr-wind/equation_systems/PDEFields.H"
+
+namespace amr_wind {
+namespace fvm {
+struct Godunov;
+} // namespace fvm
+namespace pde {
+struct ScalarTransport;
+} // namespace pde
+} // namespace amr_wind
+namespace amrex {
+class MLTensorOp;
+} // namespace amrex
 
 using namespace amrex::literals;
 

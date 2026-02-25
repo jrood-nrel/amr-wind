@@ -1,7 +1,16 @@
 #ifndef COARSENCHECKPT_H
 #define COARSENCHECKPT_H
 
+#include <AMReX_BoxArray.H>
+#include <AMReX_ParmParse.H>
+#include <AMReX_Vector.H>
+#include <string>
+
 #include "amr-wind/incflo.H"
+
+namespace amrex {
+class DistributionMapping;
+}  // namespace amrex
 
 namespace amr_wind {
 namespace tools {

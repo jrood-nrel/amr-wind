@@ -1,7 +1,16 @@
 #include "amr-wind/wind_energy/actuator/disk/disk_ops.H"
-#include "amr-wind/utilities/ncutils/nc_interface.H"
-#include "amr-wind/utilities/io_utils.H"
+
+#include <AMReX.H>
+#include <AMReX_Algorithm.H>
+#include <AMReX_BLassert.H>
+#include <AMReX_Vector.H>
+#include <numbers>
+
 #include "AMReX_REAL.H"
+#include "amr-wind/core/vs/tensor.H"
+#include "amr-wind/core/vs/tensorI.H"
+#include "amr-wind/core/vs/vstraits.H"
+#include "amr-wind/utilities/trig_ops.H"
 
 using namespace amrex::literals;
 

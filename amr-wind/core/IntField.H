@@ -1,10 +1,11 @@
 #ifndef INTFIELD_H
 #define INTFIELD_H
 
+#include <AMReX_IntVect.H>
+#include <AMReX_Vector.H>
 #include <string>
 
 #include "amr-wind/core/FieldDescTypes.H"
-
 #include "AMReX_iMultiFab.H"
 
 namespace amr_wind {
